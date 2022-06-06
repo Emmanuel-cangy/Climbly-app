@@ -2,4 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :hikes, only: %i[index show edit update new create] do
+    resources :reviews, only: %i[index show new create]
+    resources :scores, only: %i[index show new create]
+  end
+  resources :reviews, only: %i[destroy edit update]
+
+  resources :scores, only: %i[edit update destroy]
+
+  get '/users/:user_id/scores', to: 'scores#display_scores'
 end
