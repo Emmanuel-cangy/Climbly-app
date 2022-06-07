@@ -29,6 +29,6 @@ class ScoresController < ApplicationController
   end
 
   def params_score
-    params.require(:score).permit(:startDay, :endDay, :duration)
+    params.require(:score).permit(:startDay, :endDay, :duration, photos: [])
   end
 end

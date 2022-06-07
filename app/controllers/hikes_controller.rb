@@ -29,6 +29,17 @@ class HikesController < ApplicationController
     end
   end
 
+  def map
+    @hikes = Hike.all
+
+    @markers = @hikes.geocoded.map do |hike|
+      {
+        lat: hike.latitude,
+        lng: hike.longitude
+      }
+    end
+  end
+
   private
 
   def set_hike
