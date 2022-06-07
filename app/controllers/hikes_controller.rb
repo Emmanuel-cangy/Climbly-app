@@ -1,5 +1,5 @@
 class HikesController < ApplicationController
-  before_action :set_score, only: %i[show edit update create]
+  before_action :set_hike, only: %i[show edit update create]
 
   def index
     @hikes = Hike.all
@@ -31,8 +31,8 @@ class HikesController < ApplicationController
 
   private
 
-  def set_hikes
-    @score = Score.find(params[:id])
+  def set_hike
+    @hike = Hike.find(params[:id])
   end
 
   def params_hike

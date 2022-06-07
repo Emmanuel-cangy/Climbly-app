@@ -1,7 +1,12 @@
   <% hikes.each do |hike| %>
-<div class="grid-item">
-  <div class="card-hike" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <%= hike.name %>
+<div class="grid-item" data-controller="hike-show">
+  <div data-hike-show-target="card">
+    <div class="card-hike" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)" data-action="click->hike-show#displayShow">
+      <%= hike.name %>
+    </div>
+  </div>
+  <div class="d-none" data-hike-show-target="cardShow">
+    <%= render "show" %>
   </div>
 </div>
   <% end %>
