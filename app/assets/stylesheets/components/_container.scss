@@ -11,3 +11,19 @@
     font-size: 12px;
   }
 }
+
+
+
+.search-icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i{
+    font-size: 24px;
+    margin: 0px 10px 0px 0px;
+    padding: 5px;
+    background-color: lightgray;
+    border-radius: 50%;
+  }
+}
