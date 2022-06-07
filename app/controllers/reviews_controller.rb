@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
-  before_action :set_hike, only: %i[show edit update]
+  before_action :set_review, only: %i[show edit update]
 
   def index
-    @reviews = Review.where(params[:hike_id] = :hike_id)
+    @reviews = Review.where(hike_id: params[:hike_id])
   end
 
   def show
@@ -37,6 +37,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :rating, :difficulty)
+    params.require(:review).permit(:content, :rating, :difficulty, :hike_id)
   end
 end
