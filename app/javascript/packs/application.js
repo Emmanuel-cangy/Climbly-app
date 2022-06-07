@@ -14,3 +14,8 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import "jquery-bar-rating"
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
