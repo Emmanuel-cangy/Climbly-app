@@ -1,7 +1,26 @@
-<div class="banner-leaderboard" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+<div class="banner-leaderboard">
+  <div class="container d-flex flex-column">
+    <div class="container-text">
+      <h1>leaderboard</h1>
+    </div>
+    <div class="container-places-leaderboard">
+      <%= cl_image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654604149/Climbly/grey-image_eliwy5.jpg", class:'first') %>
+      <%= cl_image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654604149/Climbly/grey-image_eliwy5.jpg", class:'second') %>
+      <%= cl_image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654604149/Climbly/grey-image_eliwy5.jpg", class:'third') %>
+      <%= cl_image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654601592/Climbly/clown_mtlhzz.jpg", class:'image-1st') %>
+      <%= cl_image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654601535/Climbly/jeanphilipe_ou2feb.png", class:'image-2nd') %>
+      <%= cl_image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654601523/Climbly/moi_rlsavw.jpg", class:'image-3rd') %>
+    </div>
   </div>
+</div>
+
+<div class="container">
+  <% @scores.each do |score| %>
+    <div class="score-container">
+      <p>Email: <%= current_user.email %></p>
+      <p>Start Date: <%= score.startDay %></p>
+      <p>End Date: <%= score.endDay %></p>
+      <p>Duration: <%= score.duration %></p>
+    </div>
+  <% end %>
 </div>
