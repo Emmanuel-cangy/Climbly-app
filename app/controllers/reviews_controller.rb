@@ -16,17 +16,19 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @hike = Hike.find(params[:hike_id])
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
+    @hike = Hike.find(params[:hike_id])
     @review.user = current_user
-    @review.hike = params[:hike_id]
+    @review.hike = @hike
     if @review.save
       redirect_to hike_reviews_path(params[:hike_id])
     else
-      render :new
+      render :index
     end
   end
 
@@ -37,6 +39,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :rating, :difficulty, :hike_id)
+    params.require(:review).permit(:content, :rating, :difficulty)
   end
 end
