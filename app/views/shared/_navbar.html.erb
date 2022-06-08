@@ -7,7 +7,7 @@
       <div>
         <div class="d-none" data-search-bar-target="bar">
           <div data-controller="search-hikes">
-            <%= simple_form_for :search, url: root_path, method: :get, html: { data: { search_hikes_target: 'form' } } do |f| %>
+            <%= simple_form_for :search, url: root_path, method: :get, html: { data: { search_hikes_target: 'form' } }, :remote => true do |f| %>
               <div class="search-form-control form-group">
                 <%= f.text_field :query,
                                   class: "form-control form-group",
