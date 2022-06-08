@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to hike_reviews_path(params[:hike_id])
     else
-      render :index
+      render :new
     end
   end
 
