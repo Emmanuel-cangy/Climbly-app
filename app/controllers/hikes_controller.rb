@@ -40,6 +40,9 @@ class HikesController < ApplicationController
     end
   end
 
+  def destination
+  end
+
   private
 
   def set_hike
