@@ -6,7 +6,12 @@ class HikesController < ApplicationController
   end
 
   def show
-
+    @markers = [
+      {
+        lat: @hike.latitude,
+        lng: @hike.longitude
+      }
+    ]
   end
 
   def edit
