@@ -1,5 +1,5 @@
 class HikesController < ApplicationController
-  before_action :set_hike, only: %i[show edit update create]
+  before_action :set_hike, only: %i[show edit update create destination]
 
   def index
     @hikes = Hike.all
@@ -38,6 +38,13 @@ class HikesController < ApplicationController
         lng: hike.longitude
       }
     end
+  end
+
+  def destination
+    @marker = [{
+      lat: @hike.latitude,
+      lng: @hike.longitude
+    }]
   end
 
   private
