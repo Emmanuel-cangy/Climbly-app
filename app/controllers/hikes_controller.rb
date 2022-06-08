@@ -3,6 +3,19 @@ class HikesController < ApplicationController
 
   def index
     @hikes = Hike.all
+    if params[:query].present?
+      @hikes = @hikes.where('name ILIKE ?', "%#{params[:query]}%")
+      # binding.pry
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text {
+                    render partial: 'shared/card_hike',
+                           locals: { hikes: @hikes },
+                           formats: [:html]
+                  }
+    end
   end
 
   def show
