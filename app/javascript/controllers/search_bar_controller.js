@@ -10,7 +10,7 @@ export default class extends Controller {
 
   revealBar(event) {
     event.preventDefault()
-    console.log(this.element)
+
     this.contentTarget.classList.toggle("d-none")
     this.barTarget.classList.toggle("d-none")
     this.profileTarget.classList.toggle("d-none")
