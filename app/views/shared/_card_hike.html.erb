@@ -1,12 +1,12 @@
-  <% hikes.each do |hike| %>
-<div class="grid-item" data-controller="hike-show">
-  <div data-hike-show-target="card">
-    <div class="card-hike" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/deqc25xt2/image/upload/v1654624837/Climbly/hiking-le-morne-brabant-mauritius-2_z86glk.jpg)" data-action="click->hike-show#displayShow">
-      <%= hike.name %>
+<% hikes.each do |hike| %>
+  <div class="grid-item" data-controller="hike-show">
+    <div data-hike-show-target="card">
+      <div class="card-hike" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/deqc25xt2/image/upload/v1654624837/Climbly/hiking-le-morne-brabant-mauritius-2_z86glk.jpg)" data-action="click->hike-show#displayShow">
+        <%= link_to hike.name, hike_path(hike) %>
+      </div>
+    </div>
+    <div class="d-none" data-hike-show-target="cardShow">
+      <%= render "show" %>
     </div>
   </div>
-  <div class="d-none" data-hike-show-target="cardShow">
-    <%= render "show" %>
-  </div>
-</div>
-  <% end %>
+<% end %>
