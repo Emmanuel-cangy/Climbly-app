@@ -7,6 +7,11 @@
     <% review.rating.times do %>
       <span class="fa fa-star checked"></span>
     <% end %>
+    <div>
+    <% review.difficulty.times do %>
+    <p class="fa fa-star checked"></p>
+    <% end %>
+    </div>
       <h5 class="card-title"><%= review.hike.name %></h5>
       <p class="card-text"><%= review.content%>
     </div>
