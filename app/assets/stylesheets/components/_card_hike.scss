@@ -39,23 +39,8 @@
   height: 70vh;
 }
 
-// .modal .modal-dialog {
-//   opacity: 0;
-//   left: -30px;
-//   -webkit-transition: all 0.3s;
-//   -moz-transition: all 0.3s;
-//   transition: all 0.3s;
-// }
-
-// .modal .modal-dialog.show {
-//   position: fixed;
-//   bottom: 0px;
-//   left: 0px;
-//   margin: 0px;
-//   height: 70vh;
-//   max-width: 100%;
-//   overflow: auto;
-//   opacity: 1;
-//   transition: opacity 0.35s;
-//   transition: left 0.35s;
-// }
+.Content {
+  height:224px;
+  overflow:auto;
+  background:#fff;
+}
