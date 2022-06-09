@@ -12,6 +12,13 @@
 }
 
 
+.sticky-top{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
 // .search-bar-show{
 //   z-index: 4;
 //   position: absolute;
