@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/hikes/map', to: 'hikes#map'
 
-  resources :hikes, only: %i[index show edit update new create] do
+  resources :hikes, only: %i[index show edit update new create destroy] do
     resources :reviews, only: %i[index show new create]
     resources :scores, only: %i[index show new create]
   end

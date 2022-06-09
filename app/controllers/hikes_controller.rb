@@ -1,5 +1,6 @@
 class HikesController < ApplicationController
-  before_action :set_hike, only: %i[show edit update create destination trail]
+  before_action :set_hike, only: %i[show edit update create destination trail destroy]
+
 
   def index
     @hikes = Hike.all
@@ -63,6 +64,9 @@ class HikesController < ApplicationController
       lat: @hike.latitude,
       lng: @hike.longitude
     }]
+  end
+
+  def destroy
   end
 
   def trail
