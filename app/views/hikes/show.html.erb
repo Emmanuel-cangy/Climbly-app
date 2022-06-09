@@ -1,35 +1,68 @@
-<div class="card-category" >
-<div class="banner d-flex justify-content-center">
-<h1><%=@hike.name %></h1>
-</div>
+<div class="card-hike-show" >
+  <div class="banner d-flex justify-content-center">
+  <h1><%=@hike.name %></h1>
+  </div>
 
-<div class="d-flex justify-content-flex-start">
-<%= link_to "Back", root_path, class: "btn btn-primary" %>
-</div>
+  <div class="container">
+    <div class="row">
 
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <div class="h2-text-container">
-        <h3 class="pb-2">Description:</h3>
+      <div class="review-btn col-8">
+      <%= link_to "Review", hike_review_path(@hike), class: "btn btn-primary" %>
       </div>
-      <div class="description-body">
-        <i class="fas fa-quote-left"></i><p> Lorem Ipsum </p> <i class="fas fa-quote-right d-flex justify-content-end"></i>
+
+      <div class="scores-btn col-4">
+      <%= link_to "Scores", hike_scores_path(@hike), class: "btn btn-primary" %>
       </div>
-      <h3 class="pb-2">Difficulty:</h3>
+
     </div>
   </div>
 
-  <%# <div class="mx-4"
-    style="width: 800px; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @marker.to_json %>
-    <%# data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
+  <%# <div class="back-btn d-flex justify-content-flex-start">
+  <%= link_to "Back", root_path, class: "btn btn-primary" %>
+  <%# </div> %>
+
+
+  <%# <div class="scores-btn">
+  <%= link_to "Scores", hike_scores_path(@hike), class: "btn btn-primary" %>
   <%# </div>  %>
+
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="h3-text-container">
+          <h3 class="pb-2">A propos </h3>
+        </div>
+        <div class="description-body">
+          <i class="fas fa-quote-left"></i><p> <%= @hike.description %> </p> <i class="fas fa-quote-right d-flex justify-content-end"></i>
+        </div>
+        <div class="difficulty-body">
+          <%# <p> <%= @review.difficulty %>
+        </div>
+      </div>
+    </div>
+
+  <div class="container">
+      <div class="row">
+
+        <div class="back-btn col-8">
+        <%= link_to "Back", root_path, class: "btn btn-primary" %>
+        </div>
+
+        <div class="select-btn col-4">
+        <%= link_to "Select", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="d-flex align-items-center">
-  <%= link_to "Select", class: "btn btn-primary" %>
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+
+  <%# <div class="d-flex align-items-center">
+  <%= link_to "Select", class: "btn btn-primary" %>
+  <%# </div> %>
 
 </div>
