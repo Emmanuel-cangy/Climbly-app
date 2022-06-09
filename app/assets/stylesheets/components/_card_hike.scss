@@ -6,24 +6,20 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 600;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 25px;
   width: 100%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+  a{
+    color: white;
+    text-decoration: none;
+  }
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  grid-auto-rows: minmax(100px, auto);
-  gap: 20px;
-}
-
-.grid-item {
-  width: 90%;
-  grid-column: 1fr;
-  gap: 20px;
+.grid-item{
+  margin-bottom: 15px;
 }

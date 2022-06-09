@@ -1,8 +1,21 @@
 class HikesController < ApplicationController
-  before_action :set_hike, only: %i[show edit update create]
+  before_action :set_hike, only: %i[show edit update create destination]
 
   def index
     @hikes = Hike.all
+    if params[:query].present?
+      @hikes = @hikes.where('name ILIKE ?', "%#{params[:query]}%")
+      # binding.pry
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text {
+                    render partial: 'shared/card_hike',
+                           locals: { hikes: @hikes },
+                           formats: [:html]
+                  }
+    end
   end
 
   def show
@@ -43,6 +56,13 @@ class HikesController < ApplicationController
         lng: hike.longitude
       }
     end
+  end
+
+  def destination
+    @marker = [{
+      lat: @hike.latitude,
+      lng: @hike.longitude
+    }]
   end
 
   private
