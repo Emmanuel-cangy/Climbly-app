@@ -1,35 +1,22 @@
-<div class="card-category container" >
-<div class="banner d-flex justify-content-center">
-<h1><%=@hike.name %></h1>
-</div>
+<div class="card-category container container-background-whiter" >
 
-<div class="d-flex justify-content-flex-start">
-<%= link_to "Back", root_path, class: "btn btn-primary" %>
-</div>
+  <div class="container-card-show-content">
 
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <div class="h2-text-container">
-        <h3 class="pb-2">Description:</h3>
-      </div>
-      <div class="description-body">
-        <i class="fas fa-quote-left"></i><p> Lorem Ipsum </p> <i class="fas fa-quote-right d-flex justify-content-end"></i>
-      </div>
-      <h3 class="pb-2">Difficulty:</h3>
+    <div class="banner d-flex justify-content-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/deqc25xt2/image/upload/v1654624837/Climbly/hiking-le-morne-brabant-mauritius-2_z86glk.jpg); border-radius: 8px; height: 150px;">
     </div>
-  </div>
 
-  <%# <div class="mx-4"
-    style="width: 800px; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @marker.to_json %>
-    <%# data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
-  <%# </div>  %>
-  </div>
+    <h3>Description:</h3>
+    <div class="">
+      <i class="fas fa-quote-left"></i><p> Lorem Ipsum </p> <i class="fas fa-quote-right d-flex justify-content-end"></i>
+    </div>
+    <h3 >Difficulty:</h3>
 
-  <div class="d-flex align-items-center">
-  <%= link_to "Select", class: "btn btn-primary" %>
-  </div>
+    <%# <%= render "shared/map", markers: @markers %>
 
+    <div class="d-flex align-items-center">
+      <%= link_to "Select", class: "btn btn-primary" %>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
 </div>

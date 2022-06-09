@@ -5,7 +5,6 @@ export default class extends Controller {
 
   connect() {
     const listHtml = document.getElementById("homepage-list")
-
     console.log(listHtml)
   }
 
