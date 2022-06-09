@@ -9,7 +9,7 @@
     <%= f.input :photo, as: :file %>
     <div class="d-flex justify-content-between">
       <%= f.submit 'Post', class: "btn btn-default btn-success" %>
-      <%=f.submit 'Skip', class: "btn btn-default btn-primary"%>
+      <%= link_to 'Skip', hike_reviews_path, class:"btn btn-default btn-primary"%>
     </div>
   <% end %>
   </div>
