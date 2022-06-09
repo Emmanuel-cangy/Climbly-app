@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#require 'faker'
+require 'faker'
 #require "open-uri"
 
 Hike.destroy_all
@@ -196,3 +196,26 @@ review10 = Review.create(
   hike_id: 10)
 #file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
 #reviews110.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+puts 'Creating 10 fake scores'
+10.times do
+  score = Score.new(
+    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    user_id: User.first.id,
+    hike_id: Hike.first.id)
+  score.save!
+end
+
+puts 'Creating 10 fake users'
+10.times do
+  user = User.new(
+    name: Faker::Name.first_name,
+    surname: Faker::Name.last_name,
+    occupation: Faker::Job.title,
+    age:
+    email:Faker::Internet.email
+  )
+  user.save!
+end
