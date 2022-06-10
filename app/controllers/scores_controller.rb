@@ -10,16 +10,23 @@ class ScoresController < ApplicationController
 
   def new
     @score = Score.new
+    @hike = Hike.find(params[:hike_id])
+    @marker = [{
+      lat: @hike.latitude,
+      lng: @hike.longitude
+    }]
   end
 
   def create
+    @hike = Hike.find(params[:hike_id])
+    end_date = Time.now
     @score = Score.new(params_score)
+    sec = (@score.startDay.to_f / 1000).to_s
+    @score.duration = end_date - Time.strptime(sec, '%s')
     @score.user = current_user
-    if @score.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    @score.save
+    puts @score.duration
+    redirect_to hike_scores_path(@hike)
   end
 
   private
@@ -29,6 +36,7 @@ class ScoresController < ApplicationController
   end
 
   def params_score
-    params.require(:score).permit(:startDay, :endDay, :duration, photos: [])
+    params.require(:score).permit(:startDay)
   end
+
 end
