@@ -208,10 +208,6 @@ puts 'Creating 10 fake scores'
   score.save!
 end
 
-
-puts 'Creating 10 fake users'
-
-
 user1 = User.create(
   email: 'test1@gmail.com',
   password: '123456'
@@ -241,4 +237,3 @@ user6 = User.create(
   email: 'test6@gmail.com',
   password: '123456'
 )
-
