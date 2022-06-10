@@ -15,6 +15,7 @@ export default class extends Controller {
       accessToken: mapboxgl.accessToken,
       unit: 'metric',
       profile: 'mapbox/driving',
+      controls: {instructions: false}
     });
 
     this.map = new mapboxgl.Map({
@@ -41,11 +42,12 @@ export default class extends Controller {
       trackUserLocation: true,
       showUserHeading: true,
       showUserLocation: true,
-      fitBoundsOptions: {maxZoom:15}
+      fitBoundsOptions: {maxZoom:15},
     }));
   }
 
   #addMarkersToMap() {
+    // window.location.reload();
     this.markersValue.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])

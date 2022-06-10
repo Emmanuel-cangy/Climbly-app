@@ -211,11 +211,12 @@ end
 puts 'Creating 10 fake users'
 10.times do
   user = User.new(
-    name: Faker::Name.first_name,
-    surname: Faker::Name.last_name,
-    occupation: Faker::Job.title,
-    age:
-    email:Faker::Internet.email
+    # name: Faker::Name.first_name,
+    # surname: Faker::Name.last_name,
+    # occupation: Faker::Job.title,
+    # age:
+    email: Faker::Internet.email,
+    password: '123456'
   )
   user.save!
 end
