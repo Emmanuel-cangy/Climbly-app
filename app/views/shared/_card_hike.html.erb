@@ -2,7 +2,7 @@
   <% @hikes.each_with_index do |hike, index| %>
     <div data-controller="hike-show" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%=index%>"  data-bs-backdrop="static" data-bs-keyboard="false">
       <div class="grid-item">
-        <div class="card-hike" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/deqc25xt2/image/upload/v1654624837/Climbly/hiking-le-morne-brabant-mauritius-2_z86glk.jpg)" data-action="click->hike-show#displayShow">
+        <div class="card-hike" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path hike.photo.key || "" %>')" data-action="click->hike-show#displayShow">
           <%=hike.name%>
         </div>
       </div>
