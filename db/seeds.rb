@@ -268,4 +268,6 @@ user6 = User.create(
   email: 'test6@gmail.com',
   password: '123456'
 )
+
 puts 'Creating 1 fake User'
+

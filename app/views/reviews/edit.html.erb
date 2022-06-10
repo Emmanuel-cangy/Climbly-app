@@ -1,2 +1,13 @@
-<h1>Reviews#edit</h1>
-<p>Find me in app/views/reviews/edit.html.erb</p>
+<% @user_reviews.each do |reviews|%>
+    <div class="review-card">
+      <h2><%= reviews.hike.name %></h2>
+<%= simple_form_for [@hike, @review] do |f| %>
+    <%= f.input :rating.reviews%>
+    <%= f.input :difficulty.reviews %>
+    <%= f.input :content.reviews %>
+    <%= f.input :photo.reviews, as: :file.reviews %>
+    <div class="d-flex justify-content-between">
+      <%= f.submit 'Edit', class: "btn btn-default btn-success" %>
+    </div>
+    <% end %>
+    </div>
