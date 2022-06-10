@@ -11,6 +11,7 @@ export default class extends Controller {
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
 
+    console.log('connected')
     let directions = new MapboxDirections({
       accessToken: mapboxgl.accessToken,
       unit: 'metric',
@@ -22,15 +23,24 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
+
+
     this.map.addControl(directions, 'top-left');
     this.#addMarkersToMap();
 
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords;
-      this.map.on('load', () => {
+      // window.location.reload()
+      if (this.map.loaded()) {
         directions.setOrigin([longitude, latitude]);
         directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
-      })
+      } else {
+        this.map.on("load", () => {
+          directions.setOrigin([longitude, latitude]);
+          directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
+        })
+      }
+
      })
 
 
@@ -42,7 +52,7 @@ export default class extends Controller {
       trackUserLocation: true,
       showUserHeading: true,
       showUserLocation: true,
-      fitBoundsOptions: {maxZoom:15},
+      fitBoundsOptions: {maxZoom:15}
     }));
   }
 
@@ -54,4 +64,5 @@ export default class extends Controller {
         .addTo(this.map)
     });
   }
+
 }

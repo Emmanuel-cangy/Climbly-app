@@ -4,7 +4,7 @@
 
   <div class="container-card-show-content">
 
-    <div class="banner d-flex justify-content-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/deqc25xt2/image/upload/v1654624837/Climbly/hiking-le-morne-brabant-mauritius-2_z86glk.jpg); border-radius: 8px; height: 150px;">
+    <div class="banner d-flex justify-content-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path hike.photo.key || "" %>'); border-radius: 8px; height: 150px;">
     </div>
 
     <h3>Description:</h3>
@@ -13,17 +13,15 @@
     </div>
     <h3 >Difficulty:</h3>
 
-
-      <%# <%= render "shared/map", markers: @markers %>
-      <div style="width: 100%; height: 350px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+    <div style="width: 100%; height: 350px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
 
-    <div class="d-flex align-items-center">
-      <%= link_to "Select", destination_path(hike), class: "btn btn-primary" %>
+    <div class="d-flex align-items-center" data-destination-target="destination">
+      <%= link_to "Select", destination_path(hike), class: "btn btn-primary", data: { turbolinks: false} %>
     </div>
 
     <br><br><br><br><br><br><br><br><br><br>

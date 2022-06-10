@@ -3,10 +3,10 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = ["form", "input", "list"]
 
-  connect() {
-    const listHtml = document.getElementById("homepage-list")
-    console.log(listHtml)
-  }
+  // connect() {
+  //   const listHtml = document.getElementById("homepage-list")
+  //   console.log(listHtml)
+  // }
 
 
   update(event) {

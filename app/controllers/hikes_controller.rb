@@ -67,6 +67,8 @@ class HikesController < ApplicationController
   end
 
   def destroy
+    @hike.destroy
+    redirect_to root_path
   end
 
   def trail
@@ -83,6 +85,6 @@ class HikesController < ApplicationController
   end
 
   def params_hike
-    params.require(:hike).permit(:name)
+    params.require(:hike).permit(:name, :photo)
   end
 end
