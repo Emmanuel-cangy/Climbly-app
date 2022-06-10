@@ -1,5 +1,5 @@
 class HikesController < ApplicationController
-  before_action :set_hike, only: %i[show edit update create destination trail]
+  before_action :set_hike, only: %i[show edit update create destination]
 
   def index
     @hikes = Hike.all
@@ -10,11 +10,7 @@ class HikesController < ApplicationController
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text {
-                    render partial: 'shared/card_hike',
-                           locals: { hikes: @hikes },
-                           formats: [:html]
-                  }
+      format.text { render partial: 'shared/card_hike', locals: { hikes: @hikes }, formats: [:html] }
     end
   end
 
@@ -59,13 +55,6 @@ class HikesController < ApplicationController
   end
 
   def destination
-    @marker = [{
-      lat: @hike.latitude,
-      lng: @hike.longitude
-    }]
-  end
-
-  def trail
     @marker = [{
       lat: @hike.latitude,
       lng: @hike.longitude
