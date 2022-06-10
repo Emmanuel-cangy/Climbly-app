@@ -1,25 +1,29 @@
-<div style="width: 100%; height: 600px;"
-  data-controller="trail"
-  data-trail-markers-value="<%= @marker.to_json %>"
-  data-trail-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="pages-margin-top">
+  <div style="width: 100%; height: 600px;"
+    data-controller="trail"
+    data-trail-markers-value="<%= @marker.to_json %>"
+    data-trail-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-  <div data-controller="timer">
-    <div class="btn btn-primary"
-         data-timer-target="start"
-         data-action="click->timer#start"
-         <% puts @start %>
-         >START</div>
-    <%# <input type="text" data-timer-target="input">
-    <input type="submit" value="END"> %>
-    <%= simple_form_for [@hike, @score] do |f| %>
-    <div class="d-none">
-      <%= f.input :startDay, input_html: { data: { timer_target: 'input' } } %>
-    </div>
-    <div>
-      <%= f.submit 'END', class: "btn btn-primary"%>
-    </div>
-    <% end %>
-  </div>
+    <div data-controller="timer">
+      <div class=" container d-flex justify-content-between btn-container">
+        <div class="btn btn-primary btn-start"
+            data-timer-target="start"
+            data-action="click->timer#start"
+            <% puts @start %>
+            >START</div>
+        <%# <input type="text" data-timer-target="input">
+        <input type="submit" value="END"> %>
+        <%= simple_form_for [@hike, @score] do |f| %>
 
+        <div class="d-none">
+          <%= f.input :startDay, input_html: { data: { timer_target: 'input' } } %>
+        </div>
+        <div>
+          <%= f.submit 'END', class: "btn btn-primary btn-end"%>
+        </div>
+        <% end %>
+        </div>
+    </div>
+</div>
 
 <%# <%= link_to 'START',  %>
