@@ -208,14 +208,32 @@ puts 'Creating 10 fake scores'
   score.save!
 end
 
-puts 'Creating 10 fake users'
-10.times do
-  user = User.new(
-    name: Faker::Name.first_name,
-    surname: Faker::Name.last_name,
-    occupation: Faker::Job.title,
-    age:
-    email:Faker::Internet.email
-  )
-  user.save!
-end
+user1 = User.create(
+  email: 'test1@gmail.com',
+  password: '123456'
+)
+
+user2 = User.create(
+  email: 'test2@gmail.com',
+  password: '123456'
+)
+
+user3 = User.create(
+  email: 'test3@gmail.com',
+  password: '123456'
+)
+
+user4 = User.create(
+  email: 'test4@gmail.com',
+  password: '123456'
+)
+
+user5 = User.create(
+  email: 'test5@gmail.com',
+  password: '123456'
+)
+
+user6 = User.create(
+  email: 'test6@gmail.com',
+  password: '123456'
+)
