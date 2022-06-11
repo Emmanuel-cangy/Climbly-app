@@ -20,7 +20,8 @@
                 </button>
               </div>
               <div class="modal-body container container-background Content">
-                  <%= render "shared/card_show_details", hike: hike, markers: @markers%>
+                  <% markers = get_markers(hike) %>
+                  <%= render "shared/card_show_details", hike: hike, markers: markers%>
               </div>
             </div>
           </div>

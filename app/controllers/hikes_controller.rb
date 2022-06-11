@@ -1,6 +1,7 @@
 class HikesController < ApplicationController
 
   before_action :set_hike, only: %i[show edit update create destination destroy]
+  helper_method :get_markers
 
   def index
     @hikes = Hike.all
@@ -75,5 +76,15 @@ class HikesController < ApplicationController
 
   def params_hike
     params.require(:hike).permit(:name, :photo)
+  end
+
+  def get_markers(hike)
+    hike = Hike.find(hike.id)
+    @markers = [
+      {
+        lat: hike.latitude,
+        lng: hike.longitude
+      }
+    ]
   end
 end
