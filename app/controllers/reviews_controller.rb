@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
 
   def update
     @review.update(review_params)
+    redirect_to hike_reviews_path(@review.hike_id)
   end
 
   def new

@@ -45,10 +45,10 @@
 
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <li class="nav-item active d-flex justify-content-center">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-flex justify-content-center">
             <%= link_to "Personal Records", "#", class: "nav-link" %>
           </li>
           <%# commented section %>
@@ -62,7 +62,7 @@
           <% end %>
 
 
-          <li class="nav-item">
+          <li class="nav-item d-flex justify-content-center">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
 
