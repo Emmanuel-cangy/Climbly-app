@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[show edit update]
 
   def index
+    @hike = Hike.find(params[:hike_id])
     @reviews = Review.where(hike_id: params[:hike_id])
   end
 

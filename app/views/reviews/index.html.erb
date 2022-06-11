@@ -1,7 +1,7 @@
 <div class="container pages-margin-top all-cards-container">
   <%# show text and add review btn %>
   <div class="review-list-text d-flex justify-content-between align-items-center">
-    <h1><%= "X hike Reviews" %></h1>
+    <h1><%= @hike.name %></h1>
     <%= link_to 'Add Review', new_hike_review_path, class:"btn btn-primary"%>
   </div>
 
