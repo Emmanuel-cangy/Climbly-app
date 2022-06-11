@@ -1,0 +1,65 @@
+.all-cards-container{
+  background-color: rgba(48, 138, 30, 0.528);
+  height: 100vh;
+}
+
+.card{
+  padding: 16px 8px;
+  max-height: 250px;
+  border-radius: 16px;
+  background-color: rgba(216, 214, 214, 0.707);
+  margin: 16px 0px;
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+.card-rating-difficulty{
+  h5{
+    font-size: 18px;
+  }
+}
+
+.card-text{
+  font-size: 12px;
+}
+
+.review-list-text{
+  padding-top: 16px;
+}
+
+.edit-btn{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+
+    text-decoration: none;
+    color: gray;
+}
+
+
+
+
+// Review edit page under
+
+.input-field{
+  input{
+    border-radius: 50px;
+  }
+}
+
+.card-input-container{
+  padding: 16px 12px;
+  box-shadow: 1px 3px 10px 5px lightgray;
+  margin-bottom: 100px;
+
+}
+
+.content-field{
+
+  textarea{
+    border-radius: 20px;
+    height: 250px;
+    margin: 12px 0px;
+  }
+}

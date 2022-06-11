@@ -1,22 +1,43 @@
-<% @reviews.each do |review| %>
-<div class="card-group">
-  <div class="card d-flex p-2">
-    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 50px;"
-  alt="Avatar" />
-    <div class="card-body ">
-    <% review.rating.times do %>
-      <span class="fa fa-star checked"></span>
-    <% end %>
-    <div>
-    <% review.difficulty.times do %>
-    <p class="fa fa-star checked"></p>
-    <% end %>
-    </div>
-      <h5 class="card-title"><%= review.hike.name %></h5>
-      <p class="card-text"><%= review.content%>
-    </div>
-<%= link_to 'Edit', new_hike_review_path, class:"btn btn-light"%>
+<div class="container pages-margin-top all-cards-container">
+  <%# show text and add review btn %>
+  <div class="review-list-text d-flex justify-content-between align-items-center">
+    <h1><%= "X hike Reviews" %></h1>
+    <%= link_to 'Add Review', new_hike_review_path, class:"btn btn-primary"%>
   </div>
- </div>
-<% end %>
-<%= link_to 'Add Review', new_hike_review_path, class:"btn btn-primary"%>
+
+  <%# creates each card %>
+  <% @reviews.each do |review| %>
+    <div class="card container d-flex">
+      <%# add edit btn to each card %>
+      <%= link_to edit_review_path(review) do %>
+        <i class="edit-btn fa-solid fa-pen-to-square"></i>
+      <% end %>
+      <%# body of each card %>
+      <div class="card-body">
+        <div class="d-flex justify-content-around">
+          <%# adding image to each card %>
+          <div>
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 50px;heigh : 50px "alt="Avatar" />
+          </div>
+          <%# adding stard to the review and difficulty %>
+          <div  class="d-flex flex-column">
+            <div class="card-rating-difficulty d-flex align-items-center">
+              <h5>Rating: </h5>
+              <% review.rating.times do %>
+                <i class="fa-solid fa-star"></i>
+              <% end %>
+            </div>
+            <div class="card-rating-difficulty d-flex align-items-center">
+              <h5>Difficulty: </h5>
+              <% review.difficulty.times do %>
+                <i class="fa-solid fa-star"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <%# adding review content %>
+        <p class="card-text"><%= review.content%></p>
+      </div>
+    </div>
+  <% end %>
+</div>

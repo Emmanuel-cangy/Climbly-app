@@ -1,13 +1,27 @@
-<% @user_reviews.each do |reviews|%>
-    <div class="review-card">
-      <h2><%= reviews.hike.name %></h2>
-<%= simple_form_for [@hike, @review] do |f| %>
-    <%= f.input :rating.reviews%>
-    <%= f.input :difficulty.reviews %>
-    <%= f.input :content.reviews %>
-    <%= f.input :photo.reviews, as: :file.reviews %>
-    <div class="d-flex justify-content-between">
-      <%= f.submit 'Edit', class: "btn btn-default btn-success" %>
-    </div>
+<div class="container pages-margin-top input-card">
+  <div class="card-input-container">
+    <h2><%= @review.hike.name %></h2>
+    <%= simple_form_for [@hike, @review] do |f| %>
+
+      <div class="input-field">
+        <%= f.input :rating, class: 'input-field'%>
+      </div>
+
+      <div class="input-field">
+        <%= f.input :difficulty, class: 'input-field' %>
+      </div>
+
+      <div class="input-field content-field">
+        <%= f.input :content, class: 'input-field' %>
+      </div>
+
+      <div class="input-field">
+        <%= f.input :photo, as: :file, class: 'input-field'%>
+      </div>
+
+      <div class="d-flex justify-content-center input-field">
+        <%= f.submit 'Save Changes', class: "btn btn-success" %>
+      </div>
     <% end %>
-    </div>
+  </div>
+</div>
