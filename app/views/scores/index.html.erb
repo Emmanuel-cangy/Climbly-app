@@ -4,22 +4,34 @@
       <h1>leaderboard</h1>
     </div>
     <div class="container-places-leaderboard">
-
-    <div>
-      <%= cl_image_tag(@scores[0].user.photo.key || "", class:'image-1st') %>
-      <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864908/Climbly/1st-place-gold-medal-vector-23821321_fihbyq.jpg", class:'first') %>
-    </div>
-
-    <div>
-      <%= cl_image_tag(@scores[1].user.photo.key || "", class:'image-2nd') %>
-      <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864884/Climbly/champion-silver-medal-with-red-ribbon-vector-30899176_zumh04.webp", class:'second') %>
-    </div>
-
-    <div>
-      <%= cl_image_tag(@scores[2].user.photo.key || "", class:'image-3rd') %>
-      <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864879/Climbly/3rd-place-bronze-medal-vector-23821323_gir3bk.jpg", class:'third') %>
-    </div>
-
+      <% if @scores.empty? == false %>
+        <div>
+          <% if @scores[0].user.photo.attached? %>
+            <%= cl_image_tag @scores[0].user.photo.key, class:'image-1st' %>
+          <% else %>
+            <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864908/Climbly/1st-place-gold-medal-vector-23821321_fihbyq.jpg", class:'image-1st') %>
+          <% end %>
+          <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864908/Climbly/1st-place-gold-medal-vector-23821321_fihbyq.jpg", class:'first') %>
+        </div>
+        <div>
+          <% if @scores.count > 1 && @scores[1].user.photo.attached?%>
+            <%= cl_image_tag @scores[1].user.photo.key, class:'image-2nd' %>
+          <% end %>
+          <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864884/Climbly/champion-silver-medal-with-red-ribbon-vector-30899176_zumh04.webp", class:'image-2nd') %>
+          <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864884/Climbly/champion-silver-medal-with-red-ribbon-vector-30899176_zumh04.webp", class:'second') %>
+        </div>
+        <div>
+          <% if @scores.count > 2 && @scores[2].user.photo.attached? %>
+            <%= cl_image_tag @scores[2].user.photo.key, class:'image-3rd' %>
+          <% end %>
+            <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864879/Climbly/3rd-place-bronze-medal-vector-23821323_gir3bk.jpg", class:'image-3rd') %>
+            <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864879/Climbly/3rd-place-bronze-medal-vector-23821323_gir3bk.jpg", class:'third') %>
+        </div>
+      <% else %>
+        <div class="d-flex justify-content-center align-items-center" style="color: white;">
+          <h2>No scores yet be the first!!</h2>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

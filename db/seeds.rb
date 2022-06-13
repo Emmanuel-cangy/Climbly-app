@@ -362,11 +362,9 @@ puts 'Created 10 fake Reviews'
 
 2.times do
   score = Score.new(
-    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    user_id: User.all[1].id,
-    hike_id: Hike.all[1].id
+    user_id: User.all[0].id,
+    hike_id: Hike.all[0].id
   )
   score.save!
   puts 'Created New Score'
@@ -374,11 +372,9 @@ end
 
 2.times do
   score = Score.new(
-    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    user_id: User.all[2].id,
-    hike_id: Hike.all[2].id
+    user_id: User.all[0].id,
+    hike_id: Hike.all[0].id
   )
   score.save!
   puts 'Created New Score'
@@ -387,8 +383,6 @@ end
 
 2.times do
   score = Score.new(
-    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     user_id: User.all[3].id,
     hike_id: Hike.all[3].id
@@ -399,8 +393,6 @@ end
 
 2.times do
   score = Score.new(
-    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     user_id: User.all[4].id,
     hike_id: Hike.all[4].id
@@ -412,8 +404,6 @@ end
 
 2.times do
   score = Score.new(
-    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     user_id: User.all[5].id,
     hike_id: Hike.all[5].id
