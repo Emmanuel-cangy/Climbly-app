@@ -31,8 +31,7 @@ class ScoresController < ApplicationController
   end
 
   def my_scores
-    @scores = Score.where(user_id: current_user)
-    @scores.group("hike_id")
+    @all_scores = Score.where(user_id: current_user)
   end
 
   private
