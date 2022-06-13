@@ -15,5 +15,5 @@ Rails.application.routes.draw do
 
   resources :scores, only: %i[edit update destroy]
 
-  get '/users/:user_id/scores', to: 'scores#display_scores'
+  get 'my_scores', to: 'scores#my_scores'
 end
