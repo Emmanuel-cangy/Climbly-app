@@ -7,8 +7,64 @@ puts 'Destroyed all Hikes'
 User.destroy_all
 puts 'Destroyes all Users'
 
-User.create(email: 'test@gmail.com', password: 'password')
+User.create(
+  firstName: 'Test',
+  lastName: 'Testing',
+  email: 'test@gmail.com',
+  password: 'password'
+)
 puts 'Creating 1 fake User'
+
+User.create(
+  firstName: 'Adel',
+  lastName: 'Narod',
+  email: 'test1@gmail.com',
+  password: '123456'
+)
+puts 'Creating 1 fake User'
+
+User.create(
+  firstName: 'Billy',
+  lastName: 'Perle',
+  email: 'test2@gmail.com',
+  password: '123456'
+)
+puts 'Creating 1 fake User'
+
+User.create(
+  firstName: 'Basile',
+  lastName: 'Marquefave',
+  email: 'test3@gmail.com',
+  password: '123456'
+)
+puts 'Creating 1 fake User'
+
+User.create(
+  firstName: 'Jean-philippe',
+  lastName: 'Auguste',
+  email: 'test4@gmail.com',
+  password: '123456'
+)
+puts 'Creating 1 fake User'
+
+User.create(
+  firstName: 'Emmanuel',
+  lastName: 'Cangy',
+  email: 'test5@gmail.com',
+  password: '123456'
+)
+puts 'Creating 1 fake User'
+
+User.create(
+  firstName: 'Le',
+  lastName: 'Wagon',
+  email: 'test6@gmail.com',
+  password: '123456'
+)
+
+puts 'Creating 1 fake User'
+puts 'Creating 6 fake User'
+
 
 hike1 = Hike.create(
   name: 'Le Morne',
@@ -304,53 +360,66 @@ Review.create(
 puts 'Creating review'
 puts 'Created 10 fake Reviews'
 
-10.times do
+2.times do
   score = Score.new(
     startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    user_id: User.first.id,
-    hike_id: Hike.first.id
+    user_id: User.all[1].id,
+    hike_id: Hike.all[1].id
   )
   score.save!
   puts 'Created New Score'
 end
-puts 'Created 10 fake Scores'
 
-User.create(
-  email: 'test1@gmail.com',
-  password: '123456'
-)
-puts 'Creating 1 fake User'
+2.times do
+  score = Score.new(
+    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    user_id: User.all[2].id,
+    hike_id: Hike.all[2].id
+  )
+  score.save!
+  puts 'Created New Score'
+end
 
-User.create(
-  email: 'test2@gmail.com',
-  password: '123456'
-)
-puts 'Creating 1 fake User'
 
-User.create(
-  email: 'test3@gmail.com',
-  password: '123456'
-)
-puts 'Creating 1 fake User'
+2.times do
+  score = Score.new(
+    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    user_id: User.all[3].id,
+    hike_id: Hike.all[3].id
+  )
+  score.save!
+  puts 'Created New Score'
+end
 
-User.create(
-  email: 'test4@gmail.com',
-  password: '123456'
-)
-puts 'Creating 1 fake User'
+2.times do
+  score = Score.new(
+    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    user_id: User.all[4].id,
+    hike_id: Hike.all[4].id
+  )
+  score.save!
+  puts 'Created New Score'
+end
 
-User.create(
-  email: 'test5@gmail.com',
-  password: '123456'
-)
-puts 'Creating 1 fake User'
 
-User.create(
-  email: 'test6@gmail.com',
-  password: '123456'
-)
+2.times do
+  score = Score.new(
+    startDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    endDay: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    user_id: User.all[5].id,
+    hike_id: Hike.all[5].id
+  )
+  score.save!
+  puts 'Created New Score'
+end
 
-puts 'Creating 1 fake User'
-puts 'Creating 6 fake User'
+puts 'Created 11 fake Scores'
