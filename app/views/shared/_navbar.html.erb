@@ -58,7 +58,8 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item d-flex justify-content-center">
-            <%= link_to "Personal Records", "#", class: "nav-link" %>
+            <%# <%= link_to "Personal Records", "#", class: "nav-link" %>
+            <%= link_to 'Add a Hike', new_hike_path, class:"nav-link" %>
           </li>
           <%# commented section %>
           <% if false %>
