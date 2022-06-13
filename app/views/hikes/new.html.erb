@@ -1,0 +1,19 @@
+<br><br><br>
+<div class="container form-card">
+  <h2 class="p-2">Suggested Hike</h2>
+  <div class="card-new-hike">
+  <h2> How would you describe your suggested hike? </h2>
+  <%= simple_form_for [@hike] do |f| %>
+    <%= f.input :name, placeholder: 'Add a name' %>
+    <%= f.input :description, placeholder: 'Add a description' %>
+    <%= f.input :latitude, placeholder: 'Add a latitude' %>
+    <%= f.input :longitude, placeholder: 'Add a longitude' %>
+    <%= f.input :address, placeholder: 'Add an address'%>
+    <%= f.input :photo, as: :file %>
+    <div class="d-flex justify-content-between">
+      <%= f.submit 'Post', class: "btn btn-default btn-success" %>
+      <%= link_to 'Skip', hikes_path, class:"btn btn-default btn-primary"%>
+    </div>
+  <% end %>
+  </div>
+</div>
