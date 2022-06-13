@@ -27,7 +27,7 @@
 <div class="container">
   <% @scores.each do |score| %>
     <div class="score-container">
-      <p>Name <%= score.user.firstName %> <%= score.user.lastName %></p>
+      <p>Name: <%= score.user.firstName %> <%= score.user.lastName %></p>
       <p>Start Date: <%= score.startDay %></p>
       <p>End Date: <%= score.endDay %></p>
       <p>Duration: <%= score.duration %></p>
