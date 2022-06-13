@@ -1,6 +1,6 @@
 class HikesController < ApplicationController
 
-  before_action :set_hike, only: %i[show edit update create destination destroy]
+  before_action :set_hike, only: %i[show edit update destination destroy]
   helper_method :get_markers
 
   def index
@@ -37,7 +37,7 @@ class HikesController < ApplicationController
 
   def create
     @hike = Hike.new(params_hike)
-    @hike.user = current_user
+    # @hike.user_id = current_user.id
     if @hike.save
       redirect_to root_path
     else
@@ -75,7 +75,7 @@ class HikesController < ApplicationController
   end
 
   def params_hike
-    params.require(:hike).permit(:name, :photo)
+    params.require(:hike).permit(:name, :photo, :latitude, :longitude, :address)
   end
 
   def get_markers(hike)
