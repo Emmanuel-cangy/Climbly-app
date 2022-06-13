@@ -1,7 +1,10 @@
-<% @scores.each do |score| %>
-  <div class ="score-container">
-    <%= score.hike.name %>
-    <%= format_duration(score.duration) %>
-    <%= link_to "See Leaderboard", hike_scores_path(score.hike), class: "btn btn-primary" %>
-  </div>
-<% end %>
+<div class="container pages-margin-top">
+  <h1>My Scores</h1>
+  <% @scores.each do |score| %>
+    <div class ="score-container">
+      <%= score.hike.name %>
+      <%= format_duration(score.duration) %>
+      <%= link_to "See Leaderboard", hike_scores_path(score.hike), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

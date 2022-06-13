@@ -35,10 +35,19 @@
           </div>
         </div>
       </div>
+    <% if current_user %>
 
-      <button class="navbar-toggler navbar-toggler-profile" type="button" data-search-bar-target="profile" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="far fa-user-circle"></i>
-      </button>
+      <% if current_user.photo.attached? %>
+        <button class="navbar-toggler navbar-toggler-profile" type="button" data-search-bar-target="profile" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <%= cl_image_tag current_user.photo.key, class: "avatar avatar-nav" %>
+        </button>
+      <% else %>
+        <button class="navbar-toggler navbar-toggler-profile" type="button" data-search-bar-target="profile" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <%= image_tag "https://res.cloudinary.com/deqc25xt2/image/upload/v1653735226/development/wfpxgqqv8uyjgmxkrcwhvyejjacx.jpg", class: "avatar avatar-nav" %>
+        </button>
+      <% end %>
+    <% end %>
+
     </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
