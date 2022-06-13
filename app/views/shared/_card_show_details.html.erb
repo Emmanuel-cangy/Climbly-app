@@ -4,9 +4,11 @@
 
   <div class="container-card-show-content">
 
-    <div class="banner d-flex justify-content-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path hike.photo.key || "" %>'); border-radius: 8px; height: 150px;">
+    <div class="banner d-flex justify-content-center banner-container"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path hike.photo.key || "" %>'); border-radius: 8px; height: 150px;">
+      <%= link_to hike_scores_path(hike) do %>
+         <i class="fa-solid fa-trophy trophy-icon"></i>
+      <% end %>
     </div>
-
     <div class="d-flex justify-content-between align-items-center">
       <h3>Description:</h3> <%= link_to "Reviews", hike_reviews_path(hike), class: "btn btn-light" %>
     </div>
