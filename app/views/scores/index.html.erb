@@ -28,9 +28,7 @@
   <% @scores.each do |score| %>
     <div class="score-container">
       <p>Name: <%= score.user.firstName %> <%= score.user.lastName %></p>
-      <p>Start Date: <%= score.startDay %></p>
-      <p>End Date: <%= score.endDay %></p>
-      <p>Duration: <%= score.duration %></p>
+      <p>Duration: <%= format_duration(score.duration) %></p>
     </div>
   <% end %>
 </div>

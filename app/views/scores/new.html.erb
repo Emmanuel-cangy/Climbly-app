@@ -9,21 +9,28 @@
         <div class="btn btn-primary btn-start"
             data-timer-target="start"
             data-action="click->timer#start"
-            <% puts @start %>
             >START</div>
-        <%# <input type="text" data-timer-target="input">
-        <input type="submit" value="END"> %>
-        <%= simple_form_for [@hike, @score] do |f| %>
 
-        <div class="d-none">
-          <%= f.input :startDay, input_html: { data: { timer_target: 'input' } } %>
+        <div class="mainstopwatch">
+          <div class="maintTime">
+              <span data-timer-target="mainminute">00</span>
+              <span data-timer-target="mainsecond">00</span>
+              <span data-timer-target="milliseconds">00</span>
+          </div>
         </div>
-        <div>
-          <%= f.submit 'END', class: "btn btn-primary btn-end"%>
-        </div>
+        <%= simple_form_for [@hike, @score] do |f| %>
+          <div class="d-none">
+            <%= f.input :startDay, input_html: { data: { timer_target: 'input' } } %>
+          </div>
+          <div>
+            <%= f.submit 'END', class: "btn btn-primary btn-end", data: { action: "click->timer#stop" } %>
+          </div>
         <% end %>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
 
 <%# <%= link_to 'START',  %>

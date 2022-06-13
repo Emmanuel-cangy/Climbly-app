@@ -1,0 +1,7 @@
+<% @scores.each do |score| %>
+  <div class ="score-container">
+    <%= score.hike.name %>
+    <%= format_duration(score.duration) %>
+    <%= link_to "See Leaderboard", hike_scores_path(score.hike), class: "btn btn-primary" %>
+  </div>
+<% end %>

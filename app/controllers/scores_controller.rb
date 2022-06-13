@@ -1,8 +1,9 @@
 class ScoresController < ApplicationController
   before_action :set_score, only: %i[show update]
+  helper_method :format_duration
 
   def index
-    @scores = Score.all
+    @scores = Score.where(hike_id: params[:hike_id]).order("duration ASC").limit(10)
   end
 
   def show
@@ -24,9 +25,14 @@ class ScoresController < ApplicationController
     sec = (@score.startDay.to_f / 1000).to_s
     @score.duration = end_date - Time.strptime(sec, '%s')
     @score.user = current_user
+    @score.hike = @hike
     @score.save
-    puts @score.duration
     redirect_to hike_scores_path(@hike)
+  end
+
+  def my_scores
+    @scores = Score.where(user_id: current_user)
+    @scores.group("hike_id")
   end
 
   private
@@ -39,4 +45,10 @@ class ScoresController < ApplicationController
     params.require(:score).permit(:startDay)
   end
 
+  def format_duration(time)
+    hours = time / 3600
+    minutes = time % 360 / 60
+    seconds = time % 60
+    "#{hours}h #{minutes}min #{seconds}sec"
+  end
 end
