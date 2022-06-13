@@ -18,3 +18,26 @@
   width: 100%;
   z-index: 5;
 }
+
+.navbar-toggler-profile-image{
+  margin: 0px 0px 0px 0px;
+  padding: 2px;
+  background-color: lightgray;
+  border-radius: 50%;
+
+}
+
+.navbar-toggler-profile-basic{
+  font-size: 1.7rem;
+  padding: 5px;
+  background-color: lightgray;
+  color: black;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+
+  i{
+    color: black;
+  }
+}
