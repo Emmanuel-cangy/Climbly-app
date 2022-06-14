@@ -13,31 +13,39 @@
         <i class="edit-btn fa-solid fa-pen-to-square"></i>
       <% end %>
       <%# body of each card %>
-      <div class="card-body">
+      <div class="">
         <div class="d-flex justify-content-around">
           <%# adding image to each card %>
           <div>
             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 50px;heigh : 50px "alt="Avatar" />
           </div>
           <%# adding stard to the review and difficulty %>
-          <div  class="d-flex flex-column">
-            <div class="card-rating-difficulty d-flex align-items-center">
-              <h5>Rating: </h5>
+          <div class="d-flex flex-column container-rat-diff">
+            <div class="card-rating-difficulty d-flex align-items-center justify-content-end">
+              <h5 class="basic-reset">Rating: </h5>
               <% review.rating.times do %>
                 <i class="fa-solid fa-star"></i>
               <% end %>
             </div>
-            <div class="card-rating-difficulty d-flex align-items-center">
-              <h5>Difficulty: </h5>
+            <div class="card-rating-difficulty d-flex align-items-center justify-content-end">
+              <div>
+                <h5 class="basic-reset">Difficulty: </h5>
+              </div>
               <% review.difficulty.times do %>
-                <i class="fa-solid fa-star"></i>
+                <i class=" fa-solid fa-star"></i>
               <% end %>
             </div>
           </div>
         </div>
         <%# adding review content %>
-        <p class="card-text"><%= review.content%></p>
-        <%= link_to 'View Review', hike_review_path(@hike, review), class:"btn btn-primary"%>
+        <div style="margin-bottom: 8px;">
+          <p class="card-text">
+            <%= review.content%>
+          </p>
+        </div>
+        <div class="d-flex justify-content-end">
+          <%= link_to 'Show content', hike_review_path(@hike, review), class:"btn btn-primary btn-post"%>
+        </div>
       </div>
     </div>
   <% end %>
