@@ -1,6 +1,5 @@
 .all-cards-container{
   background-color: rgba(48, 138, 30, 0.528);
-  height: 100%;
 }
 
 .card{
@@ -45,21 +44,22 @@
 .input-field{
   input{
     border-radius: 50px;
+
   }
 }
 
 .card-input-container{
   padding: 16px 12px;
   box-shadow: 1px 3px 10px 5px lightgray;
-  margin-bottom: 100px;
 
 }
 
 .content-field{
-
   textarea{
     border-radius: 20px;
-    height: 250px;
+    border: 1px solid black;
+    height: 200px;
+    overflow: auto;
     margin: 12px 0px;
   }
 }

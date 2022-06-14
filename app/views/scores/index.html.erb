@@ -9,22 +9,24 @@
           <% if @scores[0].user.photo.attached? %>
             <%= cl_image_tag @scores[0].user.photo.key, class:'image-1st' %>
           <% else %>
-            <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864908/Climbly/1st-place-gold-medal-vector-23821321_fihbyq.jpg", class:'image-1st') %>
+            <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1653735226/development/wfpxgqqv8uyjgmxkrcwhvyejjacx.jpg", class:'image-1st') %>
           <% end %>
           <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864908/Climbly/1st-place-gold-medal-vector-23821321_fihbyq.jpg", class:'first') %>
         </div>
         <div>
           <% if @scores.count > 1 && @scores[1].user.photo.attached?%>
             <%= cl_image_tag @scores[1].user.photo.key, class:'image-2nd' %>
+          <% else %>
+            <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1653735226/development/wfpxgqqv8uyjgmxkrcwhvyejjacx.jpg", class:'image-2nd') %>
           <% end %>
-          <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864884/Climbly/champion-silver-medal-with-red-ribbon-vector-30899176_zumh04.webp", class:'image-2nd') %>
           <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864884/Climbly/champion-silver-medal-with-red-ribbon-vector-30899176_zumh04.webp", class:'second') %>
         </div>
         <div>
           <% if @scores.count > 2 && @scores[2].user.photo.attached? %>
             <%= cl_image_tag @scores[2].user.photo.key, class:'image-3rd' %>
+          <% else %>
+            <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1653735226/development/wfpxgqqv8uyjgmxkrcwhvyejjacx.jpg", class:'image-3rd') %>
           <% end %>
-            <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864879/Climbly/3rd-place-bronze-medal-vector-23821323_gir3bk.jpg", class:'image-3rd') %>
             <%= image_tag("https://res.cloudinary.com/deqc25xt2/image/upload/v1654864879/Climbly/3rd-place-bronze-medal-vector-23821323_gir3bk.jpg", class:'third') %>
         </div>
       <% else %>
@@ -36,11 +38,22 @@
   </div>
 </div>
 
-<div class="container">
-  <% @scores.each do |score| %>
-    <div class="score-container">
-      <p>Name: <%= score.user.firstName %> <%= score.user.lastName %></p>
-      <p>Duration: <%= format_duration(score.duration) %></p>
+<div class="container leaderboard-container">
+  <% @scores.each_with_index do |score, index| %>
+    <div class="score-container d-flex justify-content-around ">
+      <div class="">
+        <% if score.user.photo.attached? %>
+          <%= cl_image_tag score.user.photo.key, class: "avatar avatar-nav" %>
+        <% else %>
+          <div class="navbar-toggler-profile-basic">
+            <i class="far fa-user-circle"></i>
+          </div>
+        <% end %>
+      </div>
+      <div class="d-flex flex-column text-score-container">
+        <p>Name: <%= score.user.firstName %> <%= score.user.lastName %></p>
+        <p>Duration: <%= format_duration(score.duration) %></p>
+      </div>
     </div>
   <% end %>
 </div>
