@@ -1,2 +1,12 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<div class="card">
+    <% @review.photos.each do |photo| %>
+      <%= cl_image_tag(photo.key || "" ) %>
+    <% end %>
+  <div class="card-body">
+    <h2><%= @review.hike.name %></h2>
+    <p><%= @review.rating %></p>
+    <p><%= @review.difficulty %></p>
+    <p><%= @review.content %></p>
+    <%= link_to 'Back', hike_reviews_path, class: "btn btn-primary" %>
+  </div>
+</div>
