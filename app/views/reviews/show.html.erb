@@ -2,13 +2,15 @@
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active image-carousel">
-         <%= cl_image_tag @review.photos[0].key, class:'d-block w-100' %>
-      </div>
-      <% @review.photos[1..-1].each do |photo| %>
-        <div class="carousel-item image-carousel">
-          <%= cl_image_tag photo.key, class:'d-block w-100 image-carousel' %>
+      <% if @review.photos.attached? %>
+        <div class="carousel-item active image-carousel">
+          <%= cl_image_tag @review.photos[0].key, class:'d-block w-100' %>
         </div>
+        <% @review.photos[1..-1].each do |photo| %>
+          <div class="carousel-item image-carousel">
+            <%= cl_image_tag photo.key, class:'d-block w-100 image-carousel' %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
