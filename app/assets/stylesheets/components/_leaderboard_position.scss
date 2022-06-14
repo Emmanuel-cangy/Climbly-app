@@ -5,7 +5,8 @@
   z-index: 2;
   position: absolute;
   left: $left;
-  top: $top
+  top: $top;
+  object-fit: cover;
 }
 
 
@@ -48,6 +49,7 @@
 
   .first {
     @include score-display($top: 47%, $left: 60%);
+
   }
 
   .second{
