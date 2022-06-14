@@ -3,9 +3,17 @@
       <%= cl_image_tag(photo.key || "" ) %>
     <% end %>
   <div class="card-body">
-    <h2><%= @review.hike.name %></h2>
-    <p><%= @review.rating %></p>
-    <p><%= @review.difficulty %></p>
+    <h2><% @review.hike.name %></h2>
+    <p>Rating:
+    <% @review.rating.times do %>
+      <i class="fa-solid fa-star"></i>
+        <% end %>
+    </p>
+    <p>Difficulty:
+    <% @review.difficulty.times do %>
+      <i class="fa-solid fa-star"></i>
+        <% end %>
+    </p>
     <p><%= @review.content %></p>
     <%= link_to 'Back', hike_reviews_path, class: "btn btn-primary" %>
   </div>
