@@ -21,7 +21,8 @@
               </div>
               <div class="modal-body container container-background Content">
                   <% markers = get_markers(hike) %>
-                  <%= render "shared/card_show_details", hike: hike, markers: markers%>
+                  <% average =  average(hike) %>
+                  <%= render "shared/card_show_details", hike: hike, markers: markers, average: average %>
               </div>
             </div>
           </div>
