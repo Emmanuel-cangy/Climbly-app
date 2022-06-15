@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 class ScoresController < ApplicationController
   before_action :set_score, only: %i[show update]
   helper_method :format_duration
@@ -16,6 +19,7 @@ class ScoresController < ApplicationController
       lat: @hike.latitude,
       lng: @hike.longitude
     }]
+    get_route
   end
 
   def create
@@ -49,5 +53,23 @@ class ScoresController < ApplicationController
     minutes = time % 360 / 60
     seconds = time % 60
     "#{hours}h #{minutes}min #{seconds}sec"
+  end
+
+  def get_route
+    gpx = Cloudinary::Search
+      .expression(@hike.gpx.key)
+      .execute
+    gpx = gpx.to_h
+    url = gpx["resources"][0]["secure_url"]
+    file = URI.open(url).read
+    doc = Nokogiri::XML(file)
+    trackpoints = doc.xpath('//xmlns:trkpt')
+    @route = []
+    trackpoints.each do |trkpt|
+      lat = trkpt.xpath('@lat').to_s.to_f
+      lon = trkpt.xpath('@lon').to_s.to_f
+      ele = trkpt.text.strip.to_f
+      @route << [lon, lat, ele]
+    end
   end
 end

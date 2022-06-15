@@ -4,7 +4,8 @@ import mapboxgl from "mapbox-gl"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+    route: Array
   }
 
   connect() {
@@ -13,7 +14,7 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10",
-      center: [this.markersValue[0].lng, this.markersValue[0].lat],
+      center: [this.routeValue[0][0], this.routeValue[0][1]],
       zoom: 13
     })
 
@@ -22,7 +23,23 @@ export default class extends Controller {
     this.map.on('load', () => {
       this.map.addSource('route', {
         'type': 'geojson',
-        'data': {}  // geojson data here
+        'data': {
+          "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "name": "new",
+                        "type": "Cycling"
+                    },
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates":
+                          this.routeValue
+                    }
+                }
+            ]
+        }  // geojson data here
       })
       this.map.addLayer({
         'id': 'route',
@@ -51,11 +68,9 @@ export default class extends Controller {
   }
 
   #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
-    });
+    new mapboxgl.Marker()
+      .setLngLat([ this.routeValue[0][0], this.routeValue[0][1] ])
+      .addTo(this.map)
   }
 
 }
