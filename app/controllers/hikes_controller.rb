@@ -19,7 +19,8 @@ class HikesController < ApplicationController
     @markers = [
       {
         lat: @hike.latitude,
-        lng: @hike.longitude
+        lng: @hike.longitude,
+        image_url: helpers.asset_url("hiker")
       }
     ]
   end
@@ -52,7 +53,8 @@ class HikesController < ApplicationController
     @markers = @hikes.geocoded.map do |hike|
       {
         lat: hike.latitude,
-        lng: hike.longitude
+        lng: hike.longitude,
+        image_url: helpers.asset_url("hiker")
       }
     end
   end
@@ -60,7 +62,8 @@ class HikesController < ApplicationController
   def destination
     @marker = [{
       lat: @hike.latitude,
-      lng: @hike.longitude
+      lng: @hike.longitude,
+      image_url: helpers.asset_url("hiker")
     }]
   end
 
@@ -88,7 +91,8 @@ class HikesController < ApplicationController
     @markers = [
       {
         lat: hike.latitude,
-        lng: hike.longitude
+        lng: hike.longitude,
+        image_url: helpers.asset_url("hiker")
       }
     ]
   end

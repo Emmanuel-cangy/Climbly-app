@@ -17,7 +17,8 @@ class ScoresController < ApplicationController
     @hike = Hike.find(params[:hike_id])
     @marker = [{
       lat: @hike.latitude,
-      lng: @hike.longitude
+      lng: @hike.longitude,
+      image_url: helpers.asset_url("hiker")
     }]
     get_route
   end

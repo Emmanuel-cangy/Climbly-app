@@ -40,7 +40,6 @@ export default class extends Controller {
           directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
         })
       }
-
      })
 
 
@@ -58,8 +57,17 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     // window.location.reload();
+
+
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${marker.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "15px"
+      customMarker.style.height = "25px"
+
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(this.map)
     });
