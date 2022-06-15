@@ -1,7 +1,7 @@
 class HikesController < ApplicationController
 
   before_action :set_hike, only: %i[show edit update destination destroy]
-  helper_method :get_markers
+  helper_method :get_markers, :average
 
   def index
     @hikes = Hike.all
@@ -86,5 +86,16 @@ class HikesController < ApplicationController
         lng: hike.longitude
       }
     ]
+  end
+
+  def average(hike)
+    reviews = hike.reviews
+    total = 0
+    if reviews != []
+      reviews.each do |review|
+        total += review.difficulty
+      end
+      total / reviews.size
+    end
   end
 end
