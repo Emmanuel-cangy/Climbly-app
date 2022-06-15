@@ -50,7 +50,7 @@ class ScoresController < ApplicationController
 
   def format_duration(time)
     hours = time / 3600
-    minutes = time % 360 / 60
+    minutes = time % 3600 / 60
     seconds = time % 60
     "#{hours}h #{minutes}min #{seconds}sec"
   end

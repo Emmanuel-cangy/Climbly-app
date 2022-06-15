@@ -9,7 +9,7 @@ export default class extends Controller {
   start() {
     this.inputTarget.value = Date.now()
     setInterval(() => {
-      milliseconds+=10;
+      milliseconds+=100;
       if(milliseconds == 1000) {
         milliseconds = 0;
         second++;
@@ -27,7 +27,7 @@ export default class extends Controller {
       this.mainminuteTarget.innerHTML = ` ${m} : `;
       this.mainsecondTarget.innerHTML = `${s} : `;
       this.millisecondsTarget.innerHTML = `${ms}`;
-    }, 9);
+    }, 100);
   }
 
 }
