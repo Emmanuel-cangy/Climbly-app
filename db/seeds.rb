@@ -79,7 +79,8 @@ hike1 = Hike.create(
   Morne Brabant - Walk 2500 m on the track which runs along the sea and begin the ascent of Le Morne from the
   official gate - Once at the top, turn around by the same route.',
   latitude: -20.450000,
-  longitude: 57.316667
+  longitude: 57.316667,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/le_morne_forest_qrpjuq.jpg')
 hike1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -98,7 +99,8 @@ hike2 = Hike.create(
   an increasingly steep path without missing the crossing on the right after the blue oratory - Make a U-turn
   by the same route.',
   latitude: -20.19744,
-  longitude: 57.55572
+  longitude: 57.55572,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/Le_Pouce_rxwrky.jpg')
 hike2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -120,7 +122,8 @@ hike3 = Hike.create(
   road near a temple (see § above for details) Walk towards the bus stop and rejoin the vehicle by following
   the sticks or the road if tired.',
   latitude: -20.344388,
-  longitude: 57.466476
+  longitude: 57.466476,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654861974/Climbly/7_cascades_erfd9v.jpg')
 hike3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -138,7 +141,8 @@ Noyale, head towards Chamarel then continue towards Grand Bassin - Park on the l
 de la Rivière Black and go down or not to the viewpoint Walk towards Chamarel then turn off on the path, 200 m
 further on the right Follow the path to the top of the peak and turn around by the same route.',
   latitude: -20.39752,
-  longitude: 57.46817
+  longitude: 57.46817,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/Piton_bsbadr.png')
 hike4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -157,7 +161,8 @@ Leave on the track to the left of the police station, fork to the right and join
 Climb Le Lion, descend by the western path to the cane fields – Join the police station and the vehicle at
 the end of the loop.',
   latitude: -20.36219,
-  longitude: 57.72633
+  longitude: 57.72633,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/lion_mountain_zxcbb1.jpg')
 hike5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -175,7 +180,8 @@ coming from Pellegrin, seek to park behind the mosque located at the corner Star
 opposite, follow the canes to the edge of the wood of ravenales then start the climb At the top, go down
 again by the same route.',
   latitude: -20.27202,
-  longitude: 57.66307
+  longitude: 57.66307,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/montagne_blanche_lt57jp.jpg')
 hike6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -195,7 +201,8 @@ towards the Montagne des Remparts on the right and the Three Peaks on the left  
 Three Peaks, climb to the pass between the central breast and the one on the right Go left towards the
 top of the middle breast and return to the starting point by the same route.',
   latitude: -20.30545,
-  longitude: 57.44126
+  longitude: 57.44126,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/Three_Peaks_vmqayz.jpg')
 hike7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -214,7 +221,8 @@ turn right onto Pieter Both Road and drive almost to the end of the street - Par
 Both just in the axis of the road - Follow the track which continues the road near modest squares then skirt
 orchards and fields Continue on a flat path then steeply uphill to the summit Make a U-turn by the same route.',
   latitude: -20.19209,
-  longitude: 57.55523
+  longitude: 57.55523,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/pieter-both-blog-1_n4axik.webp')
 hike8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -234,7 +242,8 @@ to the market gardens then to the temple on the left  Continue to the sports gro
 before the small river and start the rise of the peak clearly visible on the right  Climb to the first level
 then turn left to reach the two summits  Turn around by the same route.',
   latitude: -20.25541,
-  longitude: 57.44607
+  longitude: 57.44607,
+  approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/corps_de_garde_1_kyzrv4.jpg')
 hike9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')

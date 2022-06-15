@@ -22,10 +22,14 @@
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
-
-    <div class="d-flex align-items-center" data-destination-target="destination">
-      <%= link_to "Select", destination_path(hike), class: "btn btn-primary btn-select", data: { turbolinks: false} %>
-    </div>
-
+    <% if hike.approved %>
+      <div class="d-flex align-items-center">
+        <%= link_to "Select", destination_path(hike), class: "btn btn-primary btn-select", data: { turbolinks: false} %>
+      </div>
+    <% else %>
+      <div class="d-flex align-items-center">
+       <%= link_to "Approved ?", edit_hike_path(hike), class: "btn btn-warning btn-select", data: { turbolinks: false} %>
+      </div>
+    <% end %>
   </div>
 </div>

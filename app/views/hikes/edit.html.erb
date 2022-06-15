@@ -1,0 +1,45 @@
+<div class="container pages-margin-top pages-margin-bottom input-card">
+  <div class="card-input-container" data-controller="approval">
+    <h2><%= @hike.name %></h2>
+    <%= simple_form_for @hike do |f| %>
+
+      <div class="input-field">
+        <%= f.input :name, class: 'input-field'%>
+      </div>
+
+      <div class="input-field content-field">
+        <%= f.input :description, class: 'input-field' %>
+      </div>
+
+      <div class="input-field">
+        <%= f.input :latitude, class: 'input-field' %>
+      </div>
+
+      <div class="input-field">
+        <%= f.input :longitude, class: 'input-field' %>
+      </div>
+
+      <div class="input-field">
+        <%= f.input :address, class: 'input-field' %>
+      </div>
+
+      <div class="input-field">
+        <%= f.input :photo, as: :file, class: 'input-field'%>
+      </div>
+
+      <div class='d-none'>
+        <%= f.input :approved, input_html: { data: { approval_target: "input"} }%>
+      </div>
+
+      <div class="d-flex justify-content-center input-field">
+        <%= f.submit 'Approve & Save Changes', class: "btn btn-success", data: { confirm: "Do you wish to post this new hike ?",
+                                                                                 action: "click->approval#validate"
+                                                                               } %>
+      </div>
+
+      <div class="d-flex justify-content-center input-field" style="margin-top: 4px;">
+        <%= link_to 'Delete', hike_path(@hike), method: :delete, data: {confirm: "Do you wish to delete this new hike request?"}, class: "btn btn-danger", style: "width: 220px;" %>
+      </div>
+    <% end %>
+  </div>
+</div>
