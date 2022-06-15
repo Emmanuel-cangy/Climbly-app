@@ -26,6 +26,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @hike = Hike.find(params[:hike_id])
     @review.user = current_user
+
     @review.hike = @hike
     if @review.save
       redirect_to hike_reviews_path(params[:hike_id])

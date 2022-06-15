@@ -9,8 +9,11 @@
   <% @reviews.each do |review| %>
     <div class="card container d-flex">
       <%# add edit btn to each card %>
-      <%= link_to edit_review_path(review) do %>
-        <i class="edit-btn fa-solid fa-pen-to-square"></i>
+       <%# <% raise %>
+      <% if current_user.admin? || review.user == current_user %>
+        <%= link_to edit_review_path(review) do %>
+          <i class="edit-btn fa-solid fa-pen-to-square"></i>
+        <% end %>
       <% end %>
       <%# body of each card %>
       <div class="">

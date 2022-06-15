@@ -11,7 +11,8 @@ User.create(
   firstName: 'Test',
   lastName: 'Testing',
   email: 'test@gmail.com',
-  password: 'password'
+  password: 'password',
+  admin: true
 )
 puts 'Creating 1 fake User'
 
