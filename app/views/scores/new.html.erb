@@ -2,7 +2,8 @@
   <div style="width: 100%; height: 600px;"
     data-controller="trail"
     data-trail-markers-value="<%= @marker.to_json %>"
-    data-trail-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    data-trail-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-trail-route-value="<%= @route %>"></div>
 
     <div data-controller="timer">
       <div class=" container d-flex justify-content-between btn-container">

@@ -82,8 +82,10 @@ hike1 = Hike.create(
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/le_morne_forest_qrpjuq.jpg')
 hike1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655210043/development/Le_Morne_s6rucc.gpx')
+hike1.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike1'
-
+puts hike1.gpx.attached?
 hike2 = Hike.create(
   name: 'Le Pouce',
   address: 'Moka, Mauritius',
@@ -99,10 +101,12 @@ hike2 = Hike.create(
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/Le_Pouce_rxwrky.jpg')
 hike2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655209195/development/g67swqafw12s7f4qj50tbfgofy0l.gpx')
+hike2.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike2'
 
 hike3 = Hike.create(
-  name: 'La Grande Boucle',
+  name: 'Sept Cascades',
   address: 'Henrietta, Mauritius',
   description: 'This unmissable hike in Mauritius allows you to get as close as possible to the seven waterfalls
    of the Tamarins River in a few hours. From Quatre Bornes or Curepipe, take the B102 (Candos Vacoas Road in
@@ -119,10 +123,12 @@ hike3 = Hike.create(
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654861974/Climbly/7_cascades_erfd9v.jpg')
 hike3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655273876/development/sept_cascades_n8nuol.gpx')
+hike3.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike3'
 
 hike4 = Hike.create(
-  name: 'Le Piton',
+  name: 'Pétrin',
   address: 'La Rivière Noire, Mauritius',
   description: 'With its 828 m altitude, it is the highest peak that can be seen from the viewpoint over the Black River
 Gorges looking to the left.
@@ -135,6 +141,8 @@ further on the right Follow the path to the top of the peak and turn around by t
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/Piton_bsbadr.png')
 hike4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655273876/development/P%C3%A9trin_apgoi3.gpx')
+hike4.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike4'
 
 hike5 = Hike.create(
@@ -152,6 +160,8 @@ the end of the loop.',
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/lion_mountain_zxcbb1.jpg')
 hike5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655210043/development/montagne_lion_h0mdsg.gpx')
+hike5.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike5'
 
 hike6 = Hike.create(
@@ -168,6 +178,8 @@ again by the same route.',
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/montagne_blanche_lt57jp.jpg')
 hike6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655210043/development/montagne_blanche_utoa1j.gpx')
+hike6.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike6'
 
 hike7 = Hike.create(
@@ -186,6 +198,8 @@ top of the middle breast and return to the starting point by the same route.',
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/Three_Peaks_vmqayz.jpg')
 hike7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655210043/development/les_trois_mamelles_kt0yxv.gpx')
+hike7.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike7'
 
 hike8 = Hike.create(
@@ -203,6 +217,8 @@ orchards and fields Continue on a flat path then steeply uphill to the summit Ma
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/pieter-both-blog-1_n4axik.webp')
 hike8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655210043/development/pieter_both_nsmvtp.gpx')
+hike8.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike8'
 
 hike9 = Hike.create(
@@ -221,6 +237,8 @@ then turn left to reach the two summits  Turn around by the same route.',
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/corps_de_garde_1_kyzrv4.jpg')
 hike9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655273876/development/le_corps_de_garde_hu8ypi.gpx')
+hike9.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike9'
 
 hike10 = Hike.create(
@@ -237,6 +255,8 @@ tracks in the canes then the paths to reach the summits by two separate hikes be
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/Two_pEAKS_2_w2szra.jpg')
 hike10.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655273876/development/les_deux_mamelles_zdkymr.gpx')
+hike10.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike10'
 
 Review.create(
@@ -360,9 +380,11 @@ Review.create(
 puts 'Creating review'
 puts 'Created 10 fake Reviews'
 
+durations = (2_640..14_400).to_a
+
 2.times do
   score = Score.new(
-    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: durations.sample,
     user_id: User.all[0].id,
     hike_id: Hike.all[0].id
   )
@@ -372,7 +394,7 @@ end
 
 2.times do
   score = Score.new(
-    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: durations.sample,
     user_id: User.all[0].id,
     hike_id: Hike.all[0].id
   )
@@ -380,10 +402,9 @@ end
   puts 'Created New Score'
 end
 
-
 2.times do
   score = Score.new(
-    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: durations.sample,
     user_id: User.all[3].id,
     hike_id: Hike.all[3].id
   )
@@ -393,7 +414,7 @@ end
 
 2.times do
   score = Score.new(
-    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: durations.sample,
     user_id: User.all[4].id,
     hike_id: Hike.all[4].id
   )
@@ -404,7 +425,7 @@ end
 
 2.times do
   score = Score.new(
-    duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    duration: durations.sample,
     user_id: User.all[5].id,
     hike_id: Hike.all[5].id
   )
