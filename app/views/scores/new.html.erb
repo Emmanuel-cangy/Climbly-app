@@ -1,17 +1,26 @@
 <div class="pages-margin-top">
-  <div style="width: 100%; height: 600px;"
+  <div style="width: 100vw; height: 600px;"
     data-controller="trail"
     data-trail-markers-value="<%= @marker.to_json %>"
     data-trail-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
     data-trail-route-value="<%= @route %>"></div>
 
     <div data-controller="timer">
-      <div class=" container d-flex justify-content-between btn-container">
-        <div class="btn btn-primary btn-start"
+      <div class=" container btn-container">
+
+        <%= simple_form_for [@hike, @score], html:{ class: "d-flex justify-content-center"} do |f| %>
+          <div class="d-none">
+            <%= f.input :startDay, input_html: { data: { timer_target: 'input' } } %>
+          </div>
+          <div class="btn btn-primary btn-start"
             data-timer-target="start"
             data-action="click->timer#start"
+            data-action="click->timer#revealend"
             >START</div>
-
+          <div class="d-none btn-start"  data-timer-target="end">
+            <%= f.submit 'END', class: " btn btn-primary btn-test", data: {  action: "click->timer#stop" } %>
+          </div>
+        <% end %>
         <div class="mainstopwatch">
           <div class="maintTime">
               <span data-timer-target="mainminute">00</span>
@@ -19,19 +28,7 @@
               <span data-timer-target="milliseconds">00</span>
           </div>
         </div>
-        <%= simple_form_for [@hike, @score] do |f| %>
-          <div class="d-none">
-            <%= f.input :startDay, input_html: { data: { timer_target: 'input' } } %>
-          </div>
-          <div>
-            <%= f.submit 'END', class: "btn btn-primary btn-end", data: { action: "click->timer#stop" } %>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>
 </div>
-
-
-
-<%# <%= link_to 'START',  %>

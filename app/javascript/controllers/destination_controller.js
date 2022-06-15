@@ -52,7 +52,7 @@ export default class extends Controller {
       trackUserLocation: true,
       showUserHeading: true,
       showUserLocation: true,
-      fitBoundsOptions: {maxZoom:15}
+
     }));
   }
 
