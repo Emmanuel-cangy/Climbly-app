@@ -1,10 +1,9 @@
 class HikesController < ApplicationController
-
   before_action :set_hike, only: %i[show edit update destination destroy]
   helper_method :get_markers
 
   def index
-    @hikes = Hike.all
+    @hikes = Hike.where(approved: true)
     if params[:query].present?
       @hikes = @hikes.where('name ILIKE ?', "%#{params[:query]}%")
       # binding.pry
@@ -29,6 +28,8 @@ class HikesController < ApplicationController
   end
 
   def update
+    @hike.update(params_hike)
+    redirect_to hikes_admin_path
   end
 
   def new
@@ -68,6 +69,10 @@ class HikesController < ApplicationController
     redirect_to root_path
   end
 
+  def admin
+    @hikes = Hike.where(approved: false)
+  end
+
   private
 
   def set_hike
@@ -75,7 +80,7 @@ class HikesController < ApplicationController
   end
 
   def params_hike
-    params.require(:hike).permit(:name, :photo, :latitude, :longitude, :address, :gpx)
+    params.require(:hike).permit(:name, :description, :photo, :latitude, :longitude, :address, :gpx, :approved)
   end
 
   def get_markers(hike)
