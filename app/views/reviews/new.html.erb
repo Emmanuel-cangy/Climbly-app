@@ -3,7 +3,7 @@
   <div class="card-review">
   <h2>How would you rate this hike?</h2>
   <%= simple_form_for [@hike, @review] do |f| %>
-    <div class="container input-field">
+    <div class="container input-field ">
       <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
       <%= f.input :difficulty, collection: (1..5).to_a, label: "Rate your experience" %>
       <div class="input-field content-field">
