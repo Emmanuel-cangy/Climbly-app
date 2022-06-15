@@ -1,15 +1,19 @@
-<div class="container form-card">
+<div class="container pages-margin-top pages-margin-bottom card-input-container">
   <h2 class="p-2">Leave a Review</h2>
   <div class="card-review">
   <h2>How would you rate this hike?</h2>
   <%= simple_form_for [@hike, @review] do |f| %>
-    <%= f.input :rating %>
-    <%= f.input :difficulty %>
-    <%= f.input :content, placeholder: 'Write a review' %>
-    <%= f.input :photo, as: :file %>
+    <div class="container input-field">
+      <%= f.input :rating %>
+      <%= f.input :difficulty %>
+      <div class="input-field content-field">
+        <%= f.input :content, placeholder: 'Write a review' %>
+      </div>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    </div>
     <div class="d-flex justify-content-between">
-      <%= f.submit 'Post', class: "btn btn-default btn-success" %>
-      <%= link_to 'Skip', hike_reviews_path, class:"btn btn-default btn-primary"%>
+      <%= f.submit 'Post', class: "btn btn-default btn-success btn-post" %>
+      <%= link_to 'Skip', hike_reviews_path, class:"btn btn-default btn-primary btn-skip"%>
     </div>
   <% end %>
   </div>
