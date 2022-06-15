@@ -4,7 +4,7 @@ let int = null;
 
 
 export default class extends Controller {
-  static targets = ["input", "mainminute", "mainsecond", "milliseconds"]
+  static targets = ["input", "mainminute", "mainsecond", "milliseconds", "end", "start"]
 
   start() {
     this.inputTarget.value = Date.now()
@@ -28,6 +28,8 @@ export default class extends Controller {
       this.mainsecondTarget.innerHTML = `${s} : `;
       this.millisecondsTarget.innerHTML = `${ms}`;
     }, 100);
+    this.endTarget.classList.toggle("d-none")
+    this.startTarget.classList.add("d-none")
   }
 
 }

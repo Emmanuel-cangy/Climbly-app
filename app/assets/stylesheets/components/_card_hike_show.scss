@@ -12,13 +12,14 @@
 
 
 
-.btn-end{
-  position: absolute;
-  bottom: 25px;
-  right: 16px;
-}
-
 .btn-start{
   position: absolute;
-  bottom: 25px;
+  bottom: 3rem;
+  width: 90%;
+  border-radius: 25px;
+}
+
+.btn-test{
+  width: 100%;
+  border-radius: 25px;
 }
