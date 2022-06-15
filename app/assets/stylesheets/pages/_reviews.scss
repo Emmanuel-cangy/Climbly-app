@@ -1,5 +1,6 @@
 .all-cards-container{
-  background-color: rgba(48, 138, 30, 0.528);
+  background-image: linear-gradient(180deg,#091216, 10%, #308a1eab 90%);
+  // background-color: rgba(48, 138, 30, 0.528);
   min-height: 100vh;
 }
 
@@ -28,6 +29,11 @@
 
 .review-list-text{
   padding-top: 16px;
+  h1{
+    color: white;
+    font-size: 32px;
+    font-weight: bolder;
+  }
 }
 
 .edit-btn{
