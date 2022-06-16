@@ -66,7 +66,6 @@ User.create(
 puts 'Creating 1 fake User'
 puts 'Creating 6 fake User'
 
-
 hike1 = Hike.create(
   name: 'Le Morne',
   address: 'Morne, Mauritius',
@@ -269,20 +268,25 @@ file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655273876/dev
 hike10.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike10'
 
-Review.create(
+reviews1 = Review.new(
   content:
-  "It's more impressive than insurmountable, taking your time for both the climb and the descent. The path is
+  "1st review It's more impressive than insurmountable, taking your time for both the climb and the descent. The path is
   easy to follow, no difficulty from this point of view, beware of vertigo",
   difficulty: 3,
   rating: 4,
   user_id: User.first.id,
   hike_id: hike1.id
 )
-# file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
-# reviews1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev1_qbqatr.jpg')
+reviews1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev2_zrwqhu.jpg')
+reviews1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev3_klf4pq.jpg')
+reviews1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+reviews1.save!
 puts 'Creating review'
 
-Review.create(
+reviews2 = Review.new(
   content: 'Very quick hike when the weather is nice.
   However, be careful during heavy rain, the path turns into a stream that is very difficult to use. However, dozens of
   ephemeral waterfalls are created and amaze the eyes!',
@@ -291,10 +295,12 @@ Review.create(
   user_id: User.first.id,
   hike_id: hike1.id
 )
-# file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
-# reviews2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev4_p5vo9d.jpg')
+reviews2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+reviews2.save!
 puts 'Creating review'
-Review.create(
+
+reviews3 = Review.new(
   content: 'Awesome hike! More difficult in rainy weather. The lower part gives the impression that the trails are more
   and more abandoned but it\'s still ok. Thanks to those who posted this hike on the site.',
   difficulty: 3,
@@ -302,8 +308,12 @@ Review.create(
   user_id: User.first.id,
   hike_id: hike1.id
 )
-# file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
-# reviews3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev5_dlj0hl.jpg')
+reviews3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev7_bletr3.jpg')
+reviews3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+reviews3.save!
+
 puts 'Creating review'
 Review.create(
   content: 'Not very hard, well indicated and relatively shaded, the view at the top is worth the detour.',
