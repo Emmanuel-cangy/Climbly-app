@@ -20,7 +20,7 @@ class HikesController < ApplicationController
       {
         lat: @hike.latitude,
         lng: @hike.longitude,
-        image_url: helpers.asset_url("hiker")
+        image_url: helpers.asset_url("hiker.png")
       }
     ]
   end
@@ -54,7 +54,7 @@ class HikesController < ApplicationController
       {
         lat: hike.latitude,
         lng: hike.longitude,
-        image_url: helpers.asset_url("hiker")
+        image_url: helpers.asset_url("hiker.png")
       }
     end
   end
@@ -63,7 +63,7 @@ class HikesController < ApplicationController
     @marker = [{
       lat: @hike.latitude,
       lng: @hike.longitude,
-      image_url: helpers.asset_url("hiker")
+      image_url: helpers.asset_url("hiker.png")
     }]
   end
 
@@ -92,7 +92,7 @@ class HikesController < ApplicationController
       {
         lat: hike.latitude,
         lng: hike.longitude,
-        image_url: helpers.asset_url("hiker")
+        image_url: helpers.asset_url("hiker.png")
       }
     ]
   end

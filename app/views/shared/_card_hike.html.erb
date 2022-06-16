@@ -20,9 +20,9 @@
                 </button>
               </div>
               <div class="modal-body container container-background Content">
-                  <% markers = get_markers(hike) %>
-                  <% average =  average(hike) %>
-                  <%= render "shared/card_show_details", hike: hike, markers: markers, average: average %>
+                <% markers = get_markers(hike) %>
+                <% average =  average(hike) %>
+                <%= render "shared/card_show_details", hike: hike, markers: markers, average: average %>
               </div>
             </div>
           </div>
