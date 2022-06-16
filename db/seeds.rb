@@ -69,7 +69,6 @@ puts 'Creating 6 fake User'
 
 hike1 = Hike.create(
   name: 'Le Morne',
-  address: 'Morne, Mauritius',
   description: 'Le Morne Brabant is one of the most spectacular peaks on the island, a vertiginous peak 555 m high
   which dominates the peninsula located in the south-west of Mauritius. It is also renowned for its very beautiful
   beach and its luxurious hotels that can be admired from the top of this mountain. A metal gate closes access to
@@ -78,8 +77,8 @@ hike1 = Hike.create(
   hotels of Le Morne for 2 km - In a bend to the left, park at the Embrasure near a ruined hut and the signs of Le
   Morne Brabant - Walk 2500 m on the track which runs along the sea and begin the ascent of Le Morne from the
   official gate - Once at the top, turn around by the same route.',
-  latitude: -20.450000,
-  longitude: 57.316667,
+  latitude: -20.459916626060064,
+  longitude: 57.327185869216926,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/le_morne_forest_qrpjuq.jpg')
@@ -90,7 +89,6 @@ puts 'Creating hike1'
 puts hike1.gpx.attached?
 hike2 = Hike.create(
   name: 'Le Pouce',
-  address: 'Moka, Mauritius',
   description: 'Le Pouce is one of many mountains in Mauritius, worn down by erosion over the past two million years:
   - Join Moka from Port Louis or Quatre Bornes by the M3 or M1 to the large Martindale interchanges -
   Take the Bois Chéri Road north of Möka which runs along the Möka River towards Roselyn Cottage -
@@ -98,8 +96,8 @@ hike2 = Hike.create(
   Drive to the end of La Pouce Road for 700 m and park - Start with a track and continue to the summit by
   an increasingly steep path without missing the crossing on the right after the blue oratory - Make a U-turn
   by the same route.',
-  latitude: -20.19744,
-  longitude: 57.55572,
+  latitude: -20.207575319927003,
+  longitude: 57.52703189849854,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/Le_Pouce_rxwrky.jpg')
@@ -110,7 +108,6 @@ puts 'Creating hike2'
 
 hike3 = Hike.create(
   name: 'Sept Cascades',
-  address: 'Henrietta, Mauritius',
   description: 'This unmissable hike in Mauritius allows you to get as close as possible to the seven waterfalls
    of the Tamarins River in a few hours. From Quatre Bornes or Curepipe, take the B102 (Candos Vacoas Road in
   Quatre Bornes and Vacoas La Martie Road in Curepipe) towards Henrietta - Cross Henrietta by the main road
@@ -121,8 +118,8 @@ hike3 = Hike.create(
   Join the start of the loop and descend towards the hydroelectric plant before going back up to the
   road near a temple (see § above for details) Walk towards the bus stop and rejoin the vehicle by following
   the sticks or the road if tired.',
-  latitude: -20.344388,
-  longitude: 57.466476,
+  latitude: -20.352173940175472,
+  longitude: 57.464698702096946,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654861974/Climbly/7_cascades_erfd9v.jpg')
@@ -133,15 +130,14 @@ puts 'Creating hike3'
 
 hike4 = Hike.create(
   name: 'Pétrin',
-  address: 'La Rivière Noire, Mauritius',
   description: 'With its 828 m altitude, it is the highest peak that can be seen from the viewpoint over the Black River
 Gorges looking to the left.
 Drive south towards Morne Brabant after passing Tamarin - At the crossroads on the left in the village of Grande Case
 Noyale, head towards Chamarel then continue towards Grand Bassin - Park on the left at the viewpoint over the Gorges
 de la Rivière Black and go down or not to the viewpoint Walk towards Chamarel then turn off on the path, 200 m
 further on the right Follow the path to the top of the peak and turn around by the same route.',
-  latitude: -20.39752,
-  longitude: 57.46817,
+  latitude: -20.408280735934127,
+  longitude: 57.471756935119636,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/Piton_bsbadr.png')
@@ -152,7 +148,6 @@ puts 'Creating hike4'
 
 hike5 = Hike.create(
   name: 'Lion Mountain',
-  address: 'Mahébourg, Mauritius',
   description: 'The Lion Mountain served as a watchtower in 1810 during the Battle of Vieux-Grand-Port.
 It probably takes its name from the shape of its peaks which make one think, with a lot of imagination,
 of a resting lion. From Mahébourg, go up along the coast towards Vieux Grand Port bypassing two bays
@@ -160,8 +155,8 @@ Cross the village of Vieux Grand Port and park a little before the police statio
 Leave on the track to the left of the police station, fork to the right and join the cane climbing path
 Climb Le Lion, descend by the western path to the cane fields – Join the police station and the vehicle at
 the end of the loop.',
-  latitude: -20.36219,
-  longitude: 57.72633,
+  latitude: -20.37266037753071,
+  longitude: 57.72577285766602,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/lion_mountain_zxcbb1.jpg')
@@ -172,15 +167,14 @@ puts 'Creating hike5'
 
 hike6 = Hike.create(
   name: 'White Mountain',
-  address: 'Montagne Blanche, Mauritius',
   description: 'The White Mountain is like all the cliffs on the island which are bare, vertical and bleached by
 erosion or lichens: - Getting to the village of the Montagne Blanche from Bel-Air, Center de Flacq or Quartier
 Militaire A road leaves the town to the north in the direction of Bel Etang At the crossroads of the road
 coming from Pellegrin, seek to park behind the mosque located at the corner Start the hike by the street
 opposite, follow the canes to the edge of the wood of ravenales then start the climb At the top, go down
 again by the same route.',
-  latitude: -20.27202,
-  longitude: 57.66307,
+  latitude: -20.26929775600764,
+  longitude: 57.66430467367173,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/montagne_blanche_lt57jp.jpg')
@@ -191,7 +185,6 @@ puts 'Creating hike6'
 
 hike7 = Hike.create(
   name: 'The Three Peaks',
-  address: 'Quatre Bornes, Mauritius',
   description: 'Driving in the south, we can clearly distinguish this massif with its atypical shape with these
 Three Peaks: - Drive between Flic en Flac and Quatre Bornes on the B2 (Phoenix Beaux Songes Link Road), turn
 at the roundabout towards Quinze Cantons and cross Rivière du Rempart  Continue to a fenced area for storage
@@ -200,8 +193,8 @@ Park the vehicle along the road and take the wide track on the left from the gua
 towards the Montagne des Remparts on the right and the Three Peaks on the left  Walk to the foot of the
 Three Peaks, climb to the pass between the central breast and the one on the right Go left towards the
 top of the middle breast and return to the starting point by the same route.',
-  latitude: -20.30545,
-  longitude: 57.44126,
+  latitude: -20.307175717501277,
+  longitude: 57.450326085090644,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/Three_Peaks_vmqayz.jpg')
@@ -212,7 +205,6 @@ puts 'Creating hike7'
 
 hike8 = Hike.create(
   name: 'Pieter Both',
-  address: 'Moka, Mauritius',
   description: 'When you visit Mauritius, the most impressive of all, the Pieter Both massif, does not go unnoticed
 with, at its summit, a rock that tops one of the peaks: - Drive on the M3 between Port-Louis and Quatre Bornes,
 exit at the roundabout near the Deux mamelles (two characteristic peaks) and take the B49 towards Beau Bois
@@ -220,8 +212,8 @@ Before crossing a tributary of the River Möka, turn right onto the Laura road b
 turn right onto Pieter Both Road and drive almost to the end of the street - Park when you see the rock of Pieter
 Both just in the axis of the road - Follow the track which continues the road near modest squares then skirt
 orchards and fields Continue on a flat path then steeply uphill to the summit Make a U-turn by the same route.',
-  latitude: -20.19209,
-  longitude: 57.55523,
+  latitude: -20.19956062911114,
+  longitude: 57.55309224128724,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/pieter-both-blog-1_n4axik.webp')
@@ -232,7 +224,6 @@ puts 'Creating hike8'
 
 hike9 = Hike.create(
   name: 'Le Corps de Garde',
-  address: 'Plaines Wilhems, Mauritius',
   description: 'When driving between Quatre Bornes and Flic en Flac, this mountain seems impressive with its vertical
 cliff which dominates the houses of the city: - Coming from Flic en Flac, Quatre Bornes or Tamarin, reach the
 shopping center and the Mac Do de Cascavelle Continue to Bambous via the A3  Pass Bambous to Saint-Antoine
@@ -241,8 +232,8 @@ the large cemetery to the right of the road  Fork to the right on the small road
 to the market gardens then to the temple on the left  Continue to the sports ground of La Chaumière  Park
 before the small river and start the rise of the peak clearly visible on the right  Climb to the first level
 then turn left to reach the two summits  Turn around by the same route.',
-  latitude: -20.25541,
-  longitude: 57.44607,
+  latitude: -20.250050818584732,
+  longitude: 57.45235651731492,
   approved: true
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859900/Climbly/corps_de_garde_1_kyzrv4.jpg')
@@ -253,15 +244,14 @@ puts 'Creating hike9'
 
 hike10 = Hike.create(
   name: 'The Two Peaks',
-  address: 'Beau Bois, Mauritius',
   description: 'If the Three Peaks look like all the peaks of Mauritius with its first slopes covered with vegetation
 and the rocky and difficult to access summit, the Two Peaks, by their more subjective shape, have earned their name.
 The Two Peaks are very close to the M3 expressway which connects Port Louis to Quatre Bornes from the East When
 you see them, exit at the nearest roundabout and take the B49, the road which connects Beau Bois and Ripailles
 Park at the start of the closed track of large rocks as soon as you are closest to the Two Peaks Follow the
 tracks in the canes then the paths to reach the summits by two separate hikes before returning to the road.',
-  latitude: -20.19211,
-  longitude: 57.56182
+  latitude: -20.200016249164847,
+  longitude: 57.56872147321702
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654859901/Climbly/Two_pEAKS_2_w2szra.jpg')
 hike10.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
