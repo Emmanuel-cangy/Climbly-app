@@ -18,7 +18,7 @@ class ScoresController < ApplicationController
     @marker = [{
       lat: @hike.latitude,
       lng: @hike.longitude,
-      image_url: helpers.asset_url("hiker")
+      image_url: helpers.asset_url("hiker.png")
     }]
     get_route
   end

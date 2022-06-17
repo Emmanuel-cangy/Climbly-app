@@ -1,4 +1,4 @@
-<div class="container pages-margin-top pages-margin-bottom card-input-container">
+<div class="container-background container pages-margin-top card-input-container">
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -24,7 +24,10 @@
   </div>
 
   <div class="card-body">
-    <h2>posted by: <% @review.user.firstName %> <% @review.user.lastName %></h2>
+    <div class="d-flex justify-content-between">
+      <h2>posted by: <% @review.user.firstName %> <% @review.user.lastName %> </h2>
+       <%= link_to 'Back', hike_reviews_path, class: "btn btn-primary" %>
+    </div>
     <p>Rating:
       <% @review.rating.times do %>
         <i class="fa-solid fa-star"></i>
@@ -35,9 +38,10 @@
         <i class="fa-solid fa-star"></i>
       <% end %>
     </p>
-    <h3> Description: </h3>
+    <div class="pages-padding-bottom">
+      <h3> Description: </h3>
       <%= @review.content %>
 
-    <%= link_to 'Back', hike_reviews_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
