@@ -14,8 +14,8 @@ user1 = User.create(
   password: 'password',
   admin: true
 )
-file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655446659/development/r4hqbxn1chf1iaeytyuo2jdcgl3i.jpg')
-user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655446659/development/r4hqbxn1chf1iaeytyuo2jdcgl3i.jpg')
+# user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
 user2 = User.create(
@@ -24,8 +24,8 @@ user2 = User.create(
   email: 'test1@gmail.com',
   password: '123456'
 )
-file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655446659/development/r4hqbxn1chf1iaeytyuo2jdcgl3i.jpg')
-user2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655446659/development/r4hqbxn1chf1iaeytyuo2jdcgl3i.jpg')
+# user2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
 user3 = User.create(
