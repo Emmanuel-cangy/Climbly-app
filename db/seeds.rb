@@ -271,6 +271,21 @@ file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655273876/dev
 hike10.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating hike10'
 
+hike11 = Hike.create(
+  name: 'Le Wagon Race',
+  description: 'A celebratory race around le wagon for our last day at le Wagon Mauritius. A poetic final race for our
+  final project. A Victory Lap for all our friends that we made along this short but sweet beautiful journey. Thank you
+  le wagon and see you soon beyond the finish line!',
+  latitude: -20.226684,
+  longitude: 57.538549
+)
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655450570/development/Le_wagon_race_pic_aq5nkk.jpg')
+hike11.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/raw/upload/v1655450569/development/le_wagon_race_lvumno.gpx')
+hike11.gpx.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+puts 'Creating hike11'
+
+
 reviews1 = Review.new(
   content:
   "1st review It's more impressive than insurmountable, taking your time for both the climb and the descent. The path is
@@ -405,55 +420,52 @@ puts 'Created 10 fake Reviews'
 
 durations = (2_640..14_400).to_a
 
-2.times do
-  score = Score.new(
-    duration: durations.sample,
-    user_id: User.all[0].id,
-    hike_id: Hike.all[0].id
-  )
-  score.save!
-  puts 'Created New Score'
-end
+score1 = Score.new(
+  duration: durations.sample,
+  user_id: User.all[1].id,
+  hike_id: Hike.all[0].id
+)
+score1.save!
+puts 'Created New Score'
 
-2.times do
-  score = Score.new(
-    duration: durations.sample,
-    user_id: User.all[0].id,
-    hike_id: Hike.all[0].id
-  )
-  score.save!
-  puts 'Created New Score'
-end
+score2 = Score.new(
+  duration: durations.sample,
+  user_id: User.all[2].id,
+  hike_id: Hike.all[0].id
+)
+score2.save!
+puts 'Created New Score'
 
-2.times do
-  score = Score.new(
-    duration: durations.sample,
-    user_id: User.all[3].id,
-    hike_id: Hike.all[3].id
-  )
-  score.save!
-  puts 'Created New Score'
-end
+score3 = Score.new(
+  duration: durations.sample,
+  user_id: User.all[3].id,
+  hike_id: Hike.all[0].id
+)
+score3.save!
+puts 'Created New Score'
 
-2.times do
-  score = Score.new(
-    duration: durations.sample,
-    user_id: User.all[4].id,
-    hike_id: Hike.all[4].id
-  )
-  score.save!
-  puts 'Created New Score'
-end
+score4 = Score.new(
+  duration: durations.sample,
+  user_id: User.all[4].id,
+  hike_id: Hike.all[0].id
+)
+score4.save!
+puts 'Created New Score'
 
+score6 = Score.new(
+  duration: durations.sample,
+  user_id: User.all[3].id,
+  hike_id: Hike.all[4].id
+)
+score6.save!
+puts 'Created New Score'
 
-2.times do
-  score = Score.new(
-    duration: durations.sample,
-    user_id: User.all[5].id,
-    hike_id: Hike.all[5].id
-  )
-  score.save!
-  puts 'Created New Score'
-end
+score7 = Score.new(
+  duration: durations.sample,
+  user_id: User.all[2].id,
+  hike_id: Hike.all[5].id
+)
+score7.save!
+puts 'Created New Score'
 
-puts 'Created 11 fake Scores'
+puts 'Created 8 fake Scores'
