@@ -39,6 +39,9 @@
 </div>
 
 <div class="container container-list pages-padding-bottom all-cards-container">
+  <div class="d-flex justify-content-center">
+    <%= link_to "Leave a review", new_hike_review_path, class:"btn btn-primary btn-login" %>
+  </div>
   <% @scores.each_with_index do |score, index| %>
     <div class="score-container d-flex justify-content-around ">
       <div class="">

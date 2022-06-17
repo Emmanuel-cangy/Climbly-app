@@ -7,62 +7,75 @@ puts 'Destroyed all Hikes'
 User.destroy_all
 puts 'Destroyes all Users'
 
-User.create(
-  firstName: 'Test',
-  lastName: 'Testing',
+user1 = User.create(
+  firstName: 'Jean',
+  lastName: 'Corentin',
   email: 'test@gmail.com',
   password: 'password',
   admin: true
 )
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655446659/development/r4hqbxn1chf1iaeytyuo2jdcgl3i.jpg')
+user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-User.create(
+user2 = User.create(
   firstName: 'Adel',
   lastName: 'Narod',
   email: 'test1@gmail.com',
   password: '123456'
 )
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655446659/development/r4hqbxn1chf1iaeytyuo2jdcgl3i.jpg')
+user2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-User.create(
+user3 = User.create(
   firstName: 'Billy',
   lastName: 'Perle',
   email: 'test2@gmail.com',
   password: '123456'
 )
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655448747/development/download_oox0wy.jpg')
+user3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-User.create(
-  firstName: 'Basile',
-  lastName: 'Marquefave',
+user4 = User.create(
+  firstName: 'Hema',
+  lastName: 'Momple',
   email: 'test3@gmail.com',
   password: '123456'
 )
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655448562/development/image4_euawtv.jpg')
+user4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-User.create(
+user5 = User.create(
   firstName: 'Jean-philippe',
   lastName: 'Auguste',
   email: 'test4@gmail.com',
   password: '123456'
 )
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655382828/production/pgl6zhhq8uwfx0rq4un2dkjfvcxc.png')
+user5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-User.create(
+user6 = User.create(
   firstName: 'Emmanuel',
   lastName: 'Cangy',
   email: 'test5@gmail.com',
   password: '123456'
 )
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654601523/Climbly/moi_rlsavw.jpg')
+user6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-User.create(
+user7 = User.create(
   firstName: 'Le',
   lastName: 'Wagon',
   email: 'test6@gmail.com',
   password: '123456'
 )
-
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655448669/development/le_wagon_logo_tbim6k.png')
+user7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 puts 'Creating 6 fake User'
 
@@ -264,7 +277,7 @@ reviews1 = Review.new(
   easy to follow, no difficulty from this point of view, beware of vertigo",
   difficulty: 3,
   rating: 4,
-  user_id: User.first.id,
+  user_id: User.all[0].id,
   hike_id: hike1.id
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev1_qbqatr.jpg')
@@ -282,7 +295,7 @@ reviews2 = Review.new(
   ephemeral waterfalls are created and amaze the eyes!',
   difficulty: 1,
   rating: 2,
-  user_id: User.first.id,
+  user_id: User.all[5].id,
   hike_id: hike1.id
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev4_p5vo9d.jpg')
@@ -295,7 +308,7 @@ reviews3 = Review.new(
   and more abandoned but it\'s still ok. Thanks to those who posted this hike on the site.',
   difficulty: 3,
   rating: 4,
-  user_id: User.first.id,
+  user_id: User.all[2].id,
   hike_id: hike1.id
 )
 file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655367047/development/hikerev5_dlj0hl.jpg')
@@ -309,7 +322,7 @@ Review.create(
   content: 'Not very hard, well indicated and relatively shaded, the view at the top is worth the detour.',
   difficulty: 1,
   rating: 3,
-  user_id: User.first.id,
+  user_id: User.all[3].id,
   hike_id: hike4.id
 )
 # file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
@@ -321,7 +334,7 @@ Review.create(
   be a pro, but a minimum of experience or training to achieve it!',
   difficulty: 4,
   rating: 5,
-  user_id: User.first.id,
+  user_id: User.all[5].id,
   hike_id: hike5.id
 )
 # file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
@@ -332,7 +345,7 @@ Review.create(
   content: 'A very beautiful mountain but difficult at the end, grandiose landscapes.',
   difficulty: 4,
   rating: 5,
-  user_id: User.first.id,
+  user_id: User.all[6].id,
   hike_id: hike6.id
 )
 # file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
@@ -344,7 +357,7 @@ Review.create(
   that I lost my glasses, they are in a black case, so if a hiker finds them, please contact me through the site.',
   difficulty: 2,
   rating: 4,
-  user_id: User.first.id,
+  user_id: User.all[0].id,
   hike_id: hike7.id
 )
 # file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
@@ -357,7 +370,7 @@ Review.create(
   a good physical condition, the climb is tough.',
   difficulty: 5,
   rating: 5,
-  user_id: User.first.id,
+  user_id: User.all[4].id,
   hike_id: hike8.id
 )
 # file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
@@ -371,7 +384,7 @@ Review.create(
   Once there, we have a 360 panorama.',
   difficulty: 1,
   rating: 3,
-  user_id: User.first.id,
+  user_id: User.all[6].id,
   hike_id: hike9.id
 )
 # file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
@@ -382,7 +395,7 @@ Review.create(
   content: 'As always in Mauritius, the landscapes are sumptuous and the slopes steep.',
   difficulty: 4,
   rating: 3,
-  user_id: User.first.id,
+  user_id: User.all[1].id,
   hike_id: hike10.id
 )
 # file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1654086737/image_1_iwdbta.jpg')
