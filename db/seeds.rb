@@ -423,7 +423,7 @@ durations = (2_640..14_400).to_a
 score1 = Score.new(
   duration: durations.sample,
   user_id: User.all[1].id,
-  hike_id: Hike.all[0].id
+  hike_id: Hike.first.id
 )
 score1.save!
 puts 'Created New Score'
@@ -431,7 +431,7 @@ puts 'Created New Score'
 score2 = Score.new(
   duration: durations.sample,
   user_id: User.all[2].id,
-  hike_id: Hike.all[0].id
+  hike_id: Hike.first.id
 )
 score2.save!
 puts 'Created New Score'
@@ -439,7 +439,7 @@ puts 'Created New Score'
 score3 = Score.new(
   duration: durations.sample,
   user_id: User.all[3].id,
-  hike_id: Hike.all[0].id
+  hike_id: Hike.first.id
 )
 score3.save!
 puts 'Created New Score'
@@ -447,7 +447,7 @@ puts 'Created New Score'
 score4 = Score.new(
   duration: durations.sample,
   user_id: User.all[4].id,
-  hike_id: Hike.all[0].id
+  hike_id: Hike.first.id
 )
 score4.save!
 puts 'Created New Score'
