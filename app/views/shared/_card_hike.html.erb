@@ -1,23 +1,19 @@
 <div id="homepage-list">
   <% @hikes.each_with_index do |hike, index| %>
     <div data-controller="hike-show" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%=index%>"  data-bs-backdrop="static" data-bs-keyboard="false">
-      <div class="grid-item">
-        <div class="card-hike" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path hike.photo.key || "" %>')" data-action="click->hike-show#displayShow">
-          <%=hike.name%>
-        </div>
+      <div class="card-hike grid-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path hike.photo.key || "" %>')" data-action="click->hike-show#displayShow">
+        <%=hike.name%>
       </div>
-
       <div class="d-none" data-hike-show-target="cardShow">
         <!-- Modal -->
-        <div class="modal fade grid-item" id="staticBackdrop<%=index%>" data-bs-backdrop="static" data-action="click->hike-show#close" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal fade grid-item" id="staticBackdrop<%=index%>" data-bs-backdrop="static" data-action="click->hike-show#close" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" [config]="{ignoreBackdropClick: true, keyboard: false}">
           <div class="modal-dialog ">
-            <div class="modal-content ">
+            <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">
                   <%=hike.name%>
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" data-action="click->hike-show#closebtn" aria-label="Close">
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" data-action="click->hike-show#closebtn" aria-label="Close"></button>
               </div>
               <div class="modal-body container container-background Content">
                 <% markers = get_markers(hike) %>

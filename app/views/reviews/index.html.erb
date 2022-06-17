@@ -13,50 +13,62 @@
   </div>
 
   <%# creates each card %>
-  <% @reviews.each do |review| %>
-    <div class="card container d-flex">
-      <%# add edit btn to each card %>
-       <%# <% raise %>
-      <% if current_user.admin? || review.user == current_user %>
-        <%= link_to edit_review_path(review) do %>
-          <i class="edit-btn fa-solid fa-pen-to-square"></i>
+  <% if @reviews.empty? %>
+    <div class="d-flex justify-content-center align-items-end no-reviews-container">
+      <h1>No reviews Yet</h1>
+    </div>
+  <% else %>
+    <% @reviews.each do |review| %>
+      <div class="card container d-flex">
+        <%# add edit btn to each card %>
+        <%# <% raise %>
+        <% if current_user.admin? || review.user == current_user %>
+          <%= link_to edit_review_path(review) do %>
+            <i class="edit-btn fa-solid fa-pen-to-square"></i>
+          <% end %>
         <% end %>
-      <% end %>
-      <%# body of each card %>
-      <div class="">
-        <div class="d-flex justify-content-around">
-          <%# adding image to each card %>
-          <div>
-            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 50px;heigh : 50px "alt="Avatar" />
-          </div>
-          <%# adding stard to the review and difficulty %>
-          <div class="d-flex flex-column container-rat-diff">
-            <div class="card-rating-difficulty d-flex align-items-center justify-content-end">
-              <h5 class="basic-reset">Rating: </h5>
-              <% review.rating.times do %>
-                <i class="fa-solid fa-star"></i>
+        <%# body of each card %>
+        <div class="">
+          <div class="d-flex justify-content-around">
+            <%# adding image to each card %>
+            <div>
+              <% if review.user.photo.attached? %>
+                <%= cl_image_tag review.user.photo.key, class: "avatar avatar-nav" %>
+              <% else %>
+                <div class="navbar-toggler-profile-basic">
+                  <i class="far fa-user-circle"></i>
+                </div>
               <% end %>
             </div>
-            <div class="card-rating-difficulty d-flex align-items-center justify-content-end">
-              <div>
-                <h5 class="basic-reset">Difficulty: </h5>
+            <%# adding stard to the review and difficulty %>
+            <div class="d-flex flex-column container-rat-diff">
+              <div class="card-rating-difficulty d-flex align-items-center justify-content-end">
+                <h5 class="basic-reset">Rating: </h5>
+                <% review.rating.times do %>
+                  <i class="fa-solid fa-star"></i>
+                <% end %>
               </div>
-              <% review.difficulty.times do %>
-                <i class=" fa-solid fa-star"></i>
-              <% end %>
+              <div class="card-rating-difficulty d-flex align-items-center justify-content-end">
+                <div>
+                  <h5 class="basic-reset">Difficulty: </h5>
+                </div>
+                <% review.difficulty.times do %>
+                  <i class=" fa-solid fa-star"></i>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
-        <%# adding review content %>
-        <div style="margin-bottom: 8px;">
-          <p class="card-text">
-            <%= review.content%>
-          </p>
-        </div>
-        <div class="d-flex justify-content-end">
-          <%= link_to 'Show content', hike_review_path(@hike, review), class:"btn btn-primary btn-post"%>
+          <%# adding review content %>
+          <div style="margin-bottom: 8px;">
+            <p class="card-text">
+              <%= review.content%>
+            </p>
+          </div>
+          <div class="d-flex justify-content-end">
+            <%= link_to 'Show content', hike_review_path(@hike, review), class:"btn btn-primary btn-post"%>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

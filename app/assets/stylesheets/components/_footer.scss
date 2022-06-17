@@ -5,18 +5,17 @@
   height: 50px;
   padding: 0px 50px;
   position: relative;
-}
 
-
-.footer::before{
-  content: '';
-  background: #000602;
-  opacity: 0.75;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
+  &::before{
+    content: '';
+    background: #000602;
+    opacity: 0.75;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+  }
 }
 
 .footer-container{
@@ -25,35 +24,7 @@
   justify-content: space-between;
   position: relative;
 
-  .div-home-search{
-    position: absolute;
-    align-items: center;
-    left: 7em;
-    right: auto;
-    bottom: 16px;
-    text-align: center;
-
-    i{
-    font-size: 24px;
-    padding: 5px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 50%;
-    border: 5px solid rgb(0, 0, 0);
-    outline: 5px solid rgb(255, 255, 255);
-    outline-style: double;
-    }
-  }
-
-  .div-map-search{
-    a{
-      font-size: 28px;
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-    }
-  }
-
-  .div-myscore-search{
+  .div-footer-icon{
     a{
       font-size: 28px;
       color: rgb(255, 255, 255);
@@ -62,11 +33,6 @@
   }
 
 }
-
-
-
-
-
 
 .sticky-bottom {
   position: fixed;

@@ -25,19 +25,28 @@
 
   <div class="card-body">
     <div class="d-flex justify-content-between">
-      <h2>posted by: <% @review.user.firstName %> <% @review.user.lastName %> </h2>
-       <%= link_to 'Back', hike_reviews_path, class: "btn btn-primary" %>
+      <div class="d-flex flex-column">
+        <h2>posted by: </h2>
+        <p>
+          <%= @review.user.firstName %> <%= @review.user.lastName %>
+        </p>
+      </div>
+      <div>
+        <%= link_to 'Back', hike_reviews_path, class: "btn btn-primary" %>
+      </div>
     </div>
-    <p>Rating:
-      <% @review.rating.times do %>
-        <i class="fa-solid fa-star"></i>
-      <% end %>
-    </p>
-    <p>Difficulty:
-      <% @review.difficulty.times do %>
-        <i class="fa-solid fa-star"></i>
-      <% end %>
-    </p>
+    <div class="d-flex justify-content-between">
+      <p>Rating:
+        <% @review.rating.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
+      </p>
+      <p>Difficulty:
+        <% @review.difficulty.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
+      </p>
+    </div>
     <div class="pages-padding-bottom">
       <h3> Description: </h3>
       <%= @review.content %>

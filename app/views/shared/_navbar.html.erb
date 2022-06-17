@@ -52,18 +52,12 @@
 
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active d-flex justify-content-center">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item d-flex justify-content-center">
-            <%# <%= link_to "Personal Records", "#", class: "nav-link" %>
-            <%= link_to 'Add a Hike', new_hike_path, class:"nav-link" %>
-          </li>
           <% if current_user.admin? %>
             <li class="nav-item d-flex justify-content-center">
-            <%# <%= link_to "Personal Records", "#", class: "nav-link" %>
-            <%= link_to 'Pending Approvals', hikes_admin_path, class:"nav-link" %>
-          </li>
+              <%= link_to hikes_admin_path do %>
+                <i class="fa-solid fa-clock"></i> <%= 'Pending Approvals' %>
+              <% end %>
+            </li>
           <% end %>
           <%# commented section %>
           <% if false %>
@@ -74,10 +68,10 @@
               <%= link_to "Another action", "#", class: "nav-link" %>
             </li>
           <% end %>
-
-
           <li class="nav-item d-flex justify-content-center">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to  destroy_user_session_path, method: :delete do %>
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> <%= "Log out" %>
+            <% end %>
           </li>
 
         <% else %>
