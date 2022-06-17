@@ -54,7 +54,8 @@ class HikesController < ApplicationController
       {
         lat: hike.latitude,
         lng: hike.longitude,
-        image_url: helpers.asset_url("hiker")
+        image_url: helpers.asset_url("hiker"),
+        info_window: render_to_string(partial: "info_window", locals: { hike: hike })
       }
     end
   end

@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
 
+
 export default class extends Controller {
   static values = {
     apiKey: String,
@@ -41,6 +42,7 @@ export default class extends Controller {
             ]
         }  // geojson data here
       })
+
       this.map.addLayer({
         'id': 'route',
         'type': 'line',
@@ -53,7 +55,7 @@ export default class extends Controller {
           'line-color': '#FE0103',
           'line-width': 8
         }
-    });
+      });
     })
 
     this.map.addControl(new mapboxgl.GeolocateControl({
