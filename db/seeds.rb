@@ -7,7 +7,7 @@ puts 'Destroyed all Hikes'
 User.destroy_all
 puts 'Destroyes all Users'
 
-user1 = User.create!(
+user1 = User.create(
   firstName: 'Jean',
   lastName: 'Corentin',
   email: 'test@gmail.com',
@@ -18,7 +18,7 @@ file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655446659/d
 user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-user2 = User.create!(
+user2 = User.create(
   firstName: 'Adel',
   lastName: 'Narod',
   email: 'test1@gmail.com',
@@ -28,7 +28,7 @@ file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655446659/d
 user2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-user3 = User.create!(
+user3 = User.create(
   firstName: 'Billy',
   lastName: 'Perle',
   email: 'test2@gmail.com',
@@ -38,13 +38,13 @@ file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655448747/d
 user3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
-user4 = User.create!(
+user4 = User.create(
   firstName: 'Hema',
   lastName: 'Momple',
   email: 'test3@gmail.com',
   password: '123456'
 )
-file = URI.open!('https://res.cloudinary.com/deqc25xt2/image/upload/v1655448562/development/image4_euawtv.jpg')
+file = URI.open('https://res.cloudinary.com/deqc25xt2/image/upload/v1655448562/development/image4_euawtv.jpg')
 user4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts 'Creating 1 fake User'
 
